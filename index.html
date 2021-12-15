@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <style>
+        html,
+        body {
+            height: 99%;
+            width: 99%
+        }
+		
+        table {
+            height: 100%;
+            width: 100%;
+        }
+
+        #shadow { 
+            position: fixed;
+            width:97.5%;
+            height:97.5%;
+            z-index:3; 
+            background:#000;
+            opacity: 0.3;  
+            left:10px;
+            top: 10px;
+        }
+
+        #blocklyArea {
+            z-index:1;
+        }
+		#blocklyDiv {
+            z-index:1;
+        }
+    </style>
+
+     <script type="text/javascript" src="source/blockly_compressed.js"></script>
+    
+</head>
+
+<body>
+   <table>
+        <tr>
+            <td id="blocklyArea"> </td>
+            <!--Blockly will be positioned here.-->
+        </tr>
+    </table>
+
+    <div id="blocklyDiv" style="position: absolute"></div>
+
+    <script>
+        const blocklyArea = document.getElementById('blocklyArea');
+        const blocklyDiv = document.getElementById('blocklyDiv');
+       
+        var workspace;
+
+        function init(workspaceParam, xmlString) {
+            const workspaceJson = JSON.parse(workspaceParam);
+
+            workspace = Blockly.inject(blocklyDiv,
+                {
+                    collapse: workspaceJson.Collapse,
+                    toolbox: workspaceJson.Toolbox,
+                    theme: workspaceJson.Theme,
+                    grid:
+                    {
+                        spacing: workspaceJson.BlocklyGrid.Spacing,
+                        length: workspaceJson.BlocklyGrid.Length,
+                        colour: workspaceJson.BlocklyGrid.Colour,
+                        snap: workspaceJson.BlocklyGrid.Snap
+                    },
+                    trashcan: workspaceJson.ShowTrashcan,
+                    scrollbars: false,
+                    render: workspaceJson.Render
+                }
+            );
+        }
+
+        function saveWorkspace(workspace) {
+            var xmlDom = Blockly.Xml.workspaceToDom(workspace);
+            var xmlText = Blockly.Xml.domToText(xmlDom);
+    
+            localStorage.setItem("blockly.xml", xmlText);
+        }
+
+        function getSavedWorkspace(){
+            var xmlText = localStorage.getItem("blockly.xml");
+            return xmlText;
+        }
+
+        function loadSavedWorkspace(xml) {
+            if (xml) {
+                Blockly.mainWorkspace.clear();
+                xmlDom = Blockly.Xml.textToDom(xml);
+                Blockly.Xml.domToWorkspace(xmlDom, workspace);
+            }
+        }
+        
+        function loadSrcs(...srcs) {
+            for (let i = 0; i < srcs.length; i++) {
+                loadSrc(srcs[i]);
+            }
+        }
+        
+        function loadSrc(src) {
+                var s = document.createElement('script');
+                s.setAttribute('src', src);
+                document.head.appendChild(s);
+        }
+
+        const onresize = function (e) {
+            let element = blocklyArea;
+            let x = 0;
+            let y = 0;
+            do {
+                x += element.offsetLeft;
+                y += element.offsetTop;
+                element = element.offsetParent;
+            } while (element);
+
+            // Position blocklyDiv over blocklyArea.
+            blocklyDiv.style.left = x + 'px';
+            blocklyDiv.style.top = y + 'px';
+            blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+            blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+            Blockly.svgResize(workspace);
+        };
+
+        window.addEventListener('resize', onresize, false);
+        onresize();
+
+        Blockly.svgResize(workspace);
+        
+        function initApi(interpreter, globalObject) 
+        {
+            var resultCode = '';
+            var wrapper = function(text) 
+            {
+                text = arguments.length ? text : '';
+                resultCode = text + '\n';
+                sendMessage("sendResultCode", resultCode)
+            };
+
+            interpreter.setProperty(globalObject, 'alert', interpreter.createNativeFunction(wrapper));
+
+            // Add an API function for the prompt() block.
+            wrapper = function(text) 
+            {
+                return prompt(text);
+            };
+
+            interpreter.setProperty(globalObject, 'prompt', interpreter.createNativeFunction(wrapper));
+
+            // Add an API for the wait block.  See wait_block.js
+            initInterpreterWaitForSeconds(interpreter, globalObject);
+
+            // Add an API function for highlighting blocks.
+            var wrapper = function(id) 
+            {
+                id = String(id || '');
+                return interpreter.createPrimitive(highlightBlock(id));
+            };
+            interpreter.setProperty(globalObject, 'highlightBlock', interpreter.createNativeFunction(wrapper));
+        }
+
+        function highlightBlock(id) 
+        {
+            workspace.highlightBlock(id);
+            highlightPause = true;
+        }
+
+        function resetStepUi() 
+        {
+            workspace.highlightBlock(null);
+            highlightPause = false;
+
+            Blockly.JavaScript.STATEMENT_PREFIX = null;
+            myInterpreter = null;
+
+            //sendMessage('startStep', 'false');
+        }
+
+        var highlightPause = false;
+        var latestCode = '';
+        var myInterpreter = null;
+
+        function generateCodeAndLoadIntoInterpreter() 
+        {
+            Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+            Blockly.JavaScript.addReservedWords('highlightBlock');
+            
+
+            latestCode = Blockly.JavaScript.workspaceToCode(workspace);
+        }
+
+        function stepCode() 
+        {
+            generateCodeAndLoadIntoInterpreter();
+            sendMessage('startStep', 'true');
+
+            if (!myInterpreter) 
+            {   
+                resetStepUi();
+
+                myInterpreter = new Interpreter(latestCode, initApi);
+
+                setTimeout(function() 
+                {
+                    highlightPause = true;
+                    stepCode();
+                }, 1);
+                return;
+            }
+
+            highlightPause = false;
+            do 
+            {
+                try 
+                {
+                    var hasMoreCode = myInterpreter.step();
+                } 
+                finally 
+                {
+                    if (!hasMoreCode) 
+                    {
+                        sendMessage("sendResultCode", '\n ======================')
+                        sendMessage("sendResultCode", '\n << Program complete >>')
+                        sendMessage('startStep', 'false')
+                        myInterpreter = null;
+
+                        resetStepUi();
+                        return 
+                    }
+                }
+            } while (hasMoreCode && !highlightPause); 
+       }
+
+       function sendMessage(action, data) 
+       {
+            var msgObject = 
+            { 
+        	    action: action, 
+        	    data: data 
+            };
+            var json = JSON.stringify(msgObject);
+            window.chrome.webview.postMessage(json);
+       }
+       
+
+       function runCode() 
+       {
+            resetStepUi();
+            sendMessage('startStep', 'true');
+
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            myInterpreter = new Interpreter(code, initApi);
+            myInterpreter.run();
+            myInterpreter = null;
+
+            sendMessage("sendResultCode", '\n ======================')
+            sendMessage("sendResultCode", '\n << Program complete >>')
+
+            sendMessage('startStep', 'false');
+       }
+
+    </script>
+</body>
+
+</html>
