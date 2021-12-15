@@ -19,8 +19,6 @@ steps:
     target: '$(Build.SourceVersion)'
     tagSource: 'gitTag'
     tagPattern: 'release-v.*.*'
-    assets: |
-      $(Build.ArtifactStagingDirectory)\*.zip
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
     
