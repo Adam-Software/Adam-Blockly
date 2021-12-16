@@ -35,7 +35,7 @@ steps:
     tagSource: 'gitTag'
     tagPattern: 'release-v.*.*'
     assets: |
-      $(Build.ArtifactStagingDirectory)\*.zip
+      $(Build.ArtifactStagingDirectory)/*.zip
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
     
