@@ -19,3 +19,8 @@ Blockly.JavaScript['eye_pack'] = function (block) {
     var code = 'alert("This code can execute only on your adam robot")\n';
     return [code, Blockly.JavaScript.ORDER_NONE];
 };
+
+Blockly.JavaScript['import_smbus'] = function (block) {
+    var code = 'alert("This code can execute only on your adam robot")\n';
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};

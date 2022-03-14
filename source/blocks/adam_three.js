@@ -56,7 +56,51 @@ Blockly.defineBlocksWithJsonArray([
         "tooltip": "",
         "helpUrl": ""
     },
-
+	/**
+    * import_smbus
+    *
+    */
+	{
+		"type": "import_smbus",
+		"lastDummyAlign0": "CENTRE",
+		"message0": "import smbus",
+		"previousStatement": null,
+		"nextStatement": null,
+		"colour": 230,
+		"tooltip": "",
+		"helpUrl": ""
+	}, 
+   /**
+    * write_i2c_block_data
+    *
+    */
+	{
+		"type": "write_i2c_block_data",
+		"message0": "smbus_addr %1 cmd %2 packet %3",
+		"args0": [
+			{
+				"type": "input_value",
+				"name": "smbus_addr",
+				"check": "Number"
+			},
+			{
+				"type": "input_value",
+				"name": "cmd",
+				"check": "Number"
+			},
+			{
+				"type": "input_value",
+				"name": "packet",
+				"check": "Array"
+			}
+		],
+		"inputsInline": true,
+		"previousStatement": null,
+		"nextStatement": null,
+		"colour": 230,
+		"tooltip": "",
+		"helpUrl": ""
+	},
    /**
     * adam_import_servo_lib
     */
@@ -169,5 +213,23 @@ Blockly.defineBlocksWithJsonArray([
         "colour": 230,
         "tooltip": "",
         "helpUrl": ""
-    }
+    },
+	/**
+    * sleep
+    */
+	{
+		"type": "time_sleep",
+		"message0": "sleep %1",
+		"args0": [
+			{
+				"type": "input_value",
+				"name": "sleep"
+			}
+		],
+		"previousStatement": null,
+		"nextStatement": null,
+		"colour": 230,
+		"tooltip": "",
+		"helpUrl": ""
+	}	
 ]);
