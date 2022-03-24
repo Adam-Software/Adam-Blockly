@@ -61,9 +61,4 @@ Blockly.Python['import_smbus'] = function(block) {
   var code = 'b = smbus.SMBus(1)\n';
   return code;
 };
-Blockly.Python['time_sleep'] = function(block) {
-  Blockly.Python.definitions_['import_time'] = 'import time';
-  var value_sleep = Blockly.Python.valueToCode(block, 'sleep', Blockly.Python.ORDER_ATOMIC);
-  var code = 'time.sleep(' + value_sleep + ')\n';
-  return code;
-};
+
