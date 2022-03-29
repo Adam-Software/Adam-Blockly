@@ -221,8 +221,8 @@
                 {
                     if (!hasMoreCode) 
                     {
-                        sendMessage("sendResultCode", '\n ======================')
-                        sendMessage("sendResultCode", '\n << Program complete >>')
+                        sendMessage("sendResultCode", '\n======================')
+                        sendMessage("sendResultCode", '\n<< Выполнение программы завершено >>')
                         sendMessage('startStep', 'false')
                         myInterpreter = null;
 
@@ -254,8 +254,8 @@
             myInterpreter.run();
             myInterpreter = null;
 
-            sendMessage("sendResultCode", '\n ======================')
-            sendMessage("sendResultCode", '\n << Program complete >>')
+            sendMessage("sendResultCode", '\n======================')
+            sendMessage("sendResultCode", '\n<< Выполнение программы завершено >>')
 
             sendMessage('startStep', 'false');
        }

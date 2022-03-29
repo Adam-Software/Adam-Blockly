@@ -1,4 +1,4 @@
-// This file was automatically generated.  Do not modify.
+﻿// This file was automatically generated.  Do not modify.
 
 'use strict';
 
@@ -390,7 +390,7 @@ Blockly.Msg["TEXT_TRIM_TOOLTIP"] = "Возвращает копию текста
 Blockly.Msg["TODAY"] = "Сегодня";
 Blockly.Msg["UNDO"] = "Отменить";
 Blockly.Msg["UNNAMED_KEY"] = "без названия";
-Blockly.Msg["VARIABLES_DEFAULT_NAME"] = "элемент";
+Blockly.Msg["VARIABLES_DEFAULT_NAME"] = "item";
 Blockly.Msg["VARIABLES_GET_CREATE_SET"] = "Создать блок \"присвоить\" для %1";
 Blockly.Msg["VARIABLES_GET_HELPURL"] = "https://github.com/google/blockly/wiki/Variables#get";  // untranslated
 Blockly.Msg["VARIABLES_GET_TOOLTIP"] = "Возвращает значение этой переменной.";
