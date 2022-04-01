@@ -7,16 +7,31 @@
 // If any new block imports any library, add that library name here.
 Blockly.Python.addReservedWords('math,random,Number,smbus');
 
+/**
+  * select_baudrate
+  *
+  */
+
 Blockly.Python['select_baudrate'] = function (block) {
     var dropdown_select_baudrate = block.getFieldValue('select_baudrate');
     var code = Number(dropdown_select_baudrate);
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+/**
+  * baudrate_variable
+  *
+  */
+
 Blockly.Python['baudrate_variable'] = function (block) {
     var code = Number(block.getFieldValue('BAUDRATE'));
     return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+/**
+  * adam_import_ping_variable
+  *
+  */
 
 Blockly.Python['adam_import_ping_variable'] = function (block) {
     var value_scs_id = Blockly.Python.valueToCode(block, 'SCS_ID', Blockly.Python.ORDER_ATOMIC);
@@ -28,6 +43,11 @@ Blockly.Python['adam_import_ping_variable'] = function (block) {
     return codeOne + codeTwo + codeThree + codeFour;
 };
 
+/**
+  * adam_import_servo_lib
+  *
+  */
+
 Blockly.Python['adam_import_servo_lib'] = function (block) {
     var codeOne = 'import sys, tty, termios\nfd = sys.stdin.fileno()\nold_settings = termios.tcgetattr(fd)\ndef getch():\n    try:\n        tty.setraw(sys.stdin.fileno())\n        ch = sys.stdin.read(1)\n    finally:\n';
     var codeTwo = '       termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)\n    return ch\n';
@@ -35,30 +55,4 @@ Blockly.Python['adam_import_servo_lib'] = function (block) {
     return codeOne + codeTwo + '\n' + codeThree + '\n';
 };
 
-Blockly.Python['eye_pack'] = function (block) {
-    var value_addr = Blockly.Python.valueToCode(block, 'addr', Blockly.Python.ORDER_ATOMIC);
-    var value_reg = Blockly.Python.valueToCode(block, 'reg', Blockly.Python.ORDER_ATOMIC);
-    var value_color = Blockly.Python.valueToCode(block, 'color', Blockly.Python.ORDER_ATOMIC);
-    var value_start_led = Blockly.Python.valueToCode(block, 'start_led', Blockly.Python.ORDER_ATOMIC);
-    var value_stop_led = Blockly.Python.valueToCode(block, 'stop_led', Blockly.Python.ORDER_ATOMIC);
-    var value_step = Blockly.Python.valueToCode(block, 'step', Blockly.Python.ORDER_ATOMIC);
-    var value_time = Blockly.Python.valueToCode(block, 'time', Blockly.Python.ORDER_ATOMIC);
-    var code = '[' + value_addr + ', ' + value_reg + ', ' + value_color + ', ' + value_start_led + ', ' + value_stop_led + ', ' + value_step + ', ' + value_time + ', 0' + ']';
-    return [code, Blockly.Python.ORDER_NONE];
-};
-
-Blockly.Python['write_i2c_block_data'] = function(block) {
-  var value_smbus_addr = Blockly.Python.valueToCode(block, 'smbus_addr', Blockly.Python.ORDER_ATOMIC);
-  var value_cmd = Blockly.Python.valueToCode(block, 'cmd', Blockly.Python.ORDER_ATOMIC);
-  var value_packet = Blockly.Python.valueToCode(block, 'packet', Blockly.Python.ORDER_ATOMIC);
-  var code = 'b.write_i2c_block_data(' + value_smbus_addr + ',' + value_cmd + ',' + value_packet +')\n'
-  return code;
-};
-
-
-Blockly.Python['import_smbus'] = function(block) {
-  Blockly.Python.definitions_['import_smbus'] = 'import smbus';
-  var code = 'b = smbus.SMBus(1)\n';
-  return code;
-};
 
