@@ -38,6 +38,5 @@ steps:
       $(Build.ArtifactStagingDirectory)/BlocklySource.zip
     changeLogCompareToRelease: 'lastFullRelease'
     changeLogType: 'commitBased'
-    
 
 
