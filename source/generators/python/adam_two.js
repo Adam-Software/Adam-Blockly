@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-//Blockly.Python.addReservedWords('math,random,Number,smbus');
+Blockly.Python.addReservedWords('math,random,Number,smbus');
 
 /**
  * import_adam_servo_api_with_param
