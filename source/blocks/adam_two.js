@@ -101,7 +101,7 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "servo_head",
-  "message0": "голова  %1 переменная  AdamIMU %2 %3 скорость %4 угол головы %5 угол шеи %6",
+  "message0": "голова  %1 переменная  AdamIMU %2 %3 скорость %4 угол поворота головы %5 угол подъема головы %6",
   "args0": [
     {
       "type": "input_dummy"
@@ -133,7 +133,7 @@ Blockly.defineBlocksWithJsonArray([
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
-  "tooltip": "Управление наклоном головы и шеи",
+  "tooltip": "Параметры: скорость, угол сервы шеи (лево-право), угол сервы головы (верх-низ)",
   "helpUrl": ""
 },
 
@@ -141,7 +141,6 @@ Blockly.defineBlocksWithJsonArray([
   * servo_right_hand
   *
   */
-  
 {
   "type": "servo_right_hand",
   "message0": "правая рука %1 переменная AdamIMU %2 %3 скорость %4 угол плеча %5 угол предплечья %6 угол верхнего локтя %7 угол нижнего локтя %8",
@@ -192,10 +191,57 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * servo_right_hand_short
+  *
+  */
+{
+  "type": "servo_right_hand_short",
+  "message0": "правая рука %1 переменная AdamIMU %2 %3 скорость %4 угол плеча %5 угол предплечья %6 угол локтя %7",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "shoulder_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "forearm_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "elbow_angle",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "Управление правой рукой",
+  "helpUrl": ""
+},
+
+/**
   * servo_left_hand
   *
   */
-  
 {
   "type": "servo_left_hand",
   "message0": "левая рука %1 переменная AdamIMU %2 %3 скорость %4 угол плеча %5 угол предплечья %6 угол верхнего локтя %7 угол нижнего локтя %8",
@@ -244,6 +290,54 @@ Blockly.defineBlocksWithJsonArray([
   "tooltip": "Управление левой рукой",
   "helpUrl": ""
 },
+
+/**
+  * servo_left_hand_short
+  *
+  */
+{
+  "type": "servo_left_hand_short",
+  "message0": "левая рука %1 переменная AdamIMU %2 %3 скорость %4 угол плеча %5 угол предплечья %6 угол локтя %7",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "shoulder_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "forearm_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "elbow_angle",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "Управление левой рукой",
+  "helpUrl": ""
+},
  
 /**
   * servo_torso
@@ -280,7 +374,7 @@ Blockly.defineBlocksWithJsonArray([
   "previousStatement": null,
   "nextStatement": null,
   "colour": 140,
-  "tooltip": "Управление туловищем",
+  "tooltip": "Параметры: скорость, поворот (лево-право) туловища",
   "helpUrl": ""
 },
 
@@ -327,13 +421,49 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * servo_press_short
+  *
+  */  
+{
+  "type": "servo_press_short",
+  "message0": "пресс %1 переменная AdamIMU %2 %3 скорость %4 угол наклона пресса %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "tilt_press",
+      "check": "Number"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 100,
+  "tooltip": "Управление прессом",
+  "helpUrl": ""
+},
+
+/**
   * servo_legs
   *
   */ 
-  
 {
   "type": "servo_legs",
-  "message0": "ноги %1 переменная AdamIMU %2 %3 скорость %4 угол наклона %5",
+  "message0": "ноги %1 переменная AdamIMU %2 %3 скорость %4 высота подъема %5",
   "args0": [
     {
       "type": "input_dummy"
@@ -368,8 +498,7 @@ Blockly.defineBlocksWithJsonArray([
 /**
   * servo_fingers
   *
-  */ 
-  
+  */  
 {
   "type": "servo_fingers",
   "message0": "пальцы рук %1 переменная AdamIMU %2 %3 скорость %4 угол пальцев левой руки %5 угол пальцев правой руки %6",
@@ -412,7 +541,6 @@ Blockly.defineBlocksWithJsonArray([
   * servo_squeeze_fingers
   *
   */ 
-
 {
   "type": "servo_squeeze_fingers",
   "message0": "сжать пальцы рук %1 переменная AdamIMU %2 %3 скорость %4",
@@ -442,10 +570,73 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * servo_left_squeeze_fingers
+  *
+  */ 
+{
+  "type": "servo_left_squeeze_fingers",
+  "message0": "сжать пальцы левой руки %1 переменная AdamIMU %2 %3 скорость %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 50,
+  "tooltip": "Сжать пальцы левой руки",
+  "helpUrl": ""
+},
+
+/**
+  * servo_right_squeeze_fingers
+  *
+  */ 
+{
+  "type": "servo_right_squeeze_fingers",
+  "message0": "сжать пальцы правой руки %1 переменная AdamIMU %2 %3 скорость %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 50,
+  "tooltip": "Сжать пальцы правой руки",
+  "helpUrl": ""
+},
+
+/**
   * servo_unclench_fingers
   *
   */ 
-
 {
   "type": "servo_unclench_fingers",
   "message0": "разжать пальцы рук %1 переменная AdamIMU %2 %3 скорость %4",
@@ -471,6 +662,146 @@ Blockly.defineBlocksWithJsonArray([
   "nextStatement": null,
   "colour": 50,
   "tooltip": "Разжать пальцы рук",
+  "helpUrl": ""
+},
+
+/**
+  * servo_left_unclench_fingers
+  *
+  */ 
+{
+  "type": "servo_left_unclench_fingers",
+  "message0": "разжать пальцы левой руки %1 переменная AdamIMU %2 %3 скорость %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 50,
+  "tooltip": "Разжать пальцы левой руки",
+  "helpUrl": ""
+},
+
+/**
+  * servo_right_unclench_fingers
+  *
+  */ 
+{
+  "type": "servo_right_unclench_fingers",
+  "message0": "разжать пальцы правой руки %1 переменная AdamIMU %2 %3 скорость %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 50,
+  "tooltip": "Разжать пальцы правой руки",
+  "helpUrl": ""
+},
+
+/**
+  * wheels_left_leg
+  *
+  */ 
+{
+  "type": "wheels_left_leg",
+  "message0": "колеса на левой ноге %1 переменная AdamIMU %2 %3 первый мотор %4 второй мотор %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "first_motor",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "second_motor",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "Управление колесами на левой ноге",
+  "helpUrl": ""
+},
+
+/**
+  * wheels_right_leg
+  *
+  */ 
+{
+  "type": "wheels_right_leg",
+  "message0": "колеса на правой ноге %1 переменная AdamIMU %2 %3 первый мотор %4 второй мотор %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "first_motor",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "second_motor",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "Управление колесами на правой ноге",
   "helpUrl": ""
 }
 ]);
