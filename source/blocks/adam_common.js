@@ -721,5 +721,645 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
+},
+
+/**
+  * common_music_major_chord
+  *
+  */
+
+{
+  "type": "common_music_major_chord",
+  "message0": "Мажорные аккорды %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "C",
+          "C"
+        ],
+        [
+          "C#",
+          "C#"
+        ],
+        [
+          "D",
+          "D"
+        ],
+        [
+          "D#",
+          "D#"
+        ],
+        [
+          "E",
+          "E"
+        ],
+        [
+          "F",
+          "F"
+        ],
+        [
+          "F#",
+          "F#"
+        ],
+        [
+          "G",
+          "G"
+        ],
+        [
+          "G#",
+          "G#"
+        ],
+        [
+          "A",
+          "A"
+        ],
+        [
+          "A#",
+          "A#"
+        ],
+        [
+          "B",
+          "B"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_minor_chord
+  *
+  */
+
+{
+  "type": "common_music_minor_chord",
+  "message0": "Минорные аккорды %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "Cm",
+          "Cm"
+        ],
+        [
+          "C#m",
+          "C#m"
+        ],
+        [
+          "Dm",
+          "Dm"
+        ],
+        [
+          "D#m",
+          "D#m"
+        ],
+        [
+          "Em",
+          "Em"
+        ],
+        [
+          "Fm",
+          "Fm"
+        ],
+        [
+          "F#m",
+          "F#m"
+        ],
+        [
+          "Gm",
+          "Gm"
+        ],
+        [
+          "G#m",
+          "G#m"
+        ],
+        [
+          "Am",
+          "Am"
+        ],
+        [
+          "A#m",
+          "A#m"
+        ],
+        [
+          "Bm",
+          "Bm"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_minor_major_seventh_chord
+  *
+  */
+
+{
+  "type": "common_music_minor_major_seventh_chords",
+  "message0": "Малые мажорные септаккорды %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "C7",
+          "C7"
+        ],
+        [
+          "C#7\t",
+          "C#7\t"
+        ],
+        [
+          "D7",
+          "D7"
+        ],
+        [
+          "D#7",
+          "D#7"
+        ],
+        [
+          "E7",
+          "E7"
+        ],
+        [
+          "F7",
+          "F7"
+        ],
+        [
+          "F#7\t",
+          "F#7\t"
+        ],
+        [
+          "G7",
+          "G7"
+        ],
+        [
+          "G#7",
+          "G#7"
+        ],
+        [
+          "A7",
+          "A7"
+        ],
+        [
+          "A#7",
+          "A#7"
+        ],
+        [
+          "B7",
+          "B7"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_minor_minor_seventh_chords
+  *
+  */
+
+{
+  "type": "common_music_minor_minor_seventh_chords",
+  "message0": "Малые минорные септаккорды %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "Cm7",
+          "Cm7"
+        ],
+        [
+          "C#m7",
+          "C#m7"
+        ],
+        [
+          "Dm7",
+          "Dm7"
+        ],
+        [
+          "D#m7",
+          "D#m7"
+        ],
+        [
+          "Em7",
+          "Em7"
+        ],
+        [
+          "Fm7",
+          "Fm7"
+        ],
+        [
+          "F#m7",
+          "F#m7"
+        ],
+        [
+          "Gm7",
+          "Gm7"
+        ],
+        [
+          "G#m7",
+          "G#m7"
+        ],
+        [
+          "Am7",
+          "Am7"
+        ],
+        [
+          "A#m7",
+          "A#m7"
+        ],
+        [
+          "Bm7",
+          "Bm7"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_major_chord_extended
+  *
+  */
+
+{
+  "type": "common_music_major_chord_extended",
+  "message0": "Мажорные аккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "C",
+          "C"
+        ],
+        [
+          "C#",
+          "C#"
+        ],
+        [
+          "D",
+          "D"
+        ],
+        [
+          "D#",
+          "D#"
+        ],
+        [
+          "E",
+          "E"
+        ],
+        [
+          "F",
+          "F"
+        ],
+        [
+          "F#",
+          "F#"
+        ],
+        [
+          "G",
+          "G"
+        ],
+        [
+          "G#",
+          "G#"
+        ],
+        [
+          "A",
+          "A"
+        ],
+        [
+          "A#",
+          "A#"
+        ],
+        [
+          "B",
+          "B"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "major_third"
+    },
+    {
+      "type": "input_value",
+      "name": "perfect_fifth"
+    },
+    {
+      "type": "input_value",
+      "name": "major_seventh"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_minor_chord_extended
+  *
+  */
+
+{
+  "type": "common_music_minor_chord_extended",
+  "message0": "Минорные аккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "Cm",
+          "Cm"
+        ],
+        [
+          "C#m",
+          "C#m"
+        ],
+        [
+          "Dm",
+          "Dm"
+        ],
+        [
+          "D#m",
+          "D#m"
+        ],
+        [
+          "Em",
+          "Em"
+        ],
+        [
+          "Fm",
+          "Fm"
+        ],
+        [
+          "F#m",
+          "F#m"
+        ],
+        [
+          "Gm",
+          "Gm"
+        ],
+        [
+          "G#m",
+          "G#m"
+        ],
+        [
+          "Am",
+          "Am"
+        ],
+        [
+          "A#m",
+          "A#m"
+        ],
+        [
+          "Bm",
+          "Bm"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "major_third"
+    },
+    {
+      "type": "input_value",
+      "name": "perfect_fifth"
+    },
+    {
+      "type": "input_value",
+      "name": "major_seventh"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_minor_major_seventh_chords_extended
+  *
+  */
+
+{
+  "type": "common_music_minor_major_seventh_chords_extended",
+  "message0": "Малые мажорные септаккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "C7",
+          "C7"
+        ],
+        [
+          "C#7\t",
+          "C#7\t"
+        ],
+        [
+          "D7",
+          "D7"
+        ],
+        [
+          "D#7",
+          "D#7"
+        ],
+        [
+          "E7",
+          "E7"
+        ],
+        [
+          "F7",
+          "F7"
+        ],
+        [
+          "F#7\t",
+          "F#7\t"
+        ],
+        [
+          "G7",
+          "G7"
+        ],
+        [
+          "G#7",
+          "G#7"
+        ],
+        [
+          "A7",
+          "A7"
+        ],
+        [
+          "A#7",
+          "A#7"
+        ],
+        [
+          "B7",
+          "B7"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "major_third"
+    },
+    {
+      "type": "input_value",
+      "name": "perfect_fifth"
+    },
+    {
+      "type": "input_value",
+      "name": "major_seventh"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_minor_minor_seventh_chords_extended
+  *
+  */
+
+{
+  "type": "common_music_minor_minor_seventh_chords_extended",
+  "message0": "Малые минорные септаккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "chord",
+      "options": [
+        [
+          "Cm7",
+          "Cm7"
+        ],
+        [
+          "C#m7",
+          "C#m7"
+        ],
+        [
+          "Dm7",
+          "Dm7"
+        ],
+        [
+          "D#m7",
+          "D#m7"
+        ],
+        [
+          "Em7",
+          "Em7"
+        ],
+        [
+          "Fm7",
+          "Fm7"
+        ],
+        [
+          "F#m7",
+          "F#m7"
+        ],
+        [
+          "Gm7",
+          "Gm7"
+        ],
+        [
+          "G#m7",
+          "G#m7"
+        ],
+        [
+          "Am7",
+          "Am7"
+        ],
+        [
+          "A#m7",
+          "A#m7"
+        ],
+        [
+          "Bm7",
+          "Bm7"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "major_third"
+    },
+    {
+      "type": "input_value",
+      "name": "perfect_fifth"
+    },
+    {
+      "type": "input_value",
+      "name": "major_seventh"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }
 ]);

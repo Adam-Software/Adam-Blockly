@@ -266,3 +266,119 @@ Blockly.Python['common_sensor_gravity'] = function(block) {
   var code = variable_sensor_variable + '.gravity';
   return [code, Blockly.Python.ORDER_NONE];
 };
+
+/**
+  * common_music_major_chord
+  *
+  */
+
+Blockly.Python['common_music_major_chord'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_music_minor_chord
+  *
+  */
+
+Blockly.Python['common_music_minor_chord'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_music_minor_major_seventh_chords
+  *
+  */
+
+Blockly.Python['common_music_minor_major_seventh_chords'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_music_minor_minor_seventh_chords
+  *
+  */
+
+Blockly.Python['common_music_minor_minor_seventh_chords'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_music_major_chord_extended
+  *
+  */
+
+Blockly.Python['common_music_major_chord_extended'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
+  var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
+  var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_music_minor_chord_extended
+  *
+  */
+
+Blockly.Python['common_music_minor_chord_extended'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
+  var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
+  var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_music_minor_major_seventh_chords_extended
+  *
+  */
+
+Blockly.Python['common_music_minor_major_seventh_chords_extended'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
+  var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
+  var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_music_minor_minor_seventh_chords_extended
+  *
+  */
+
+Blockly.Python['common_music_minor_minor_seventh_chords_extended'] = function(block) {
+  var dropdown_chord = block.getFieldValue('chord');
+  var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
+  var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
+  var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.Python.ORDER_NONE];
+};
