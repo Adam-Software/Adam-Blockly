@@ -1361,5 +1361,657 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
+},
+
+/**
+  * common_music_note
+  *
+  */
+
+
+{
+  "type": "common_music_note",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "нота %1 %2 oктава %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "note",
+      "options": [
+        [
+          "C",
+          "C"
+        ],
+        [
+          "C#",
+          "C#"
+        ],
+        [
+          "D",
+          "D"
+        ],
+        [
+          "D#",
+          "D#"
+        ],
+        [
+          "E",
+          "E"
+        ],
+        [
+          "F",
+          "F"
+        ],
+        [
+          "F#",
+          "F#"
+        ],
+        [
+          "G",
+          "G"
+        ],
+        [
+          "G#",
+          "G#"
+        ],
+        [
+          "A",
+          "A"
+        ],
+        [
+          "A#",
+          "A#"
+        ],
+        [
+          "B",
+          "B"
+        ],
+        [
+          "Bb",
+          "Bb"
+        ],
+        [
+          "Eb",
+          "Eb"
+        ],
+        [
+          "Ab",
+          "Ab"
+        ],
+        [
+          "Db",
+          "Db"
+        ],
+        [
+          "Gb",
+          "Gb"
+        ],
+        [
+          "c",
+          "c"
+        ],
+        [
+          "c#",
+          "c#"
+        ],
+        [
+          "d",
+          "d"
+        ],
+        [
+          "d#",
+          "d#"
+        ],
+        [
+          "e",
+          "e"
+        ],
+        [
+          "f",
+          "f"
+        ],
+        [
+          "f#",
+          "f#"
+        ],
+        [
+          "g",
+          "g"
+        ],
+        [
+          "g#",
+          "g#"
+        ],
+        [
+          "a",
+          "a"
+        ],
+        [
+          "a#",
+          "a#"
+        ],
+        [
+          "b",
+          "b"
+        ],
+        [
+          "bb",
+          "bb"
+        ],
+        [
+          "eb",
+          "eb"
+        ],
+        [
+          "ab",
+          "ab"
+        ],
+        [
+          "db",
+          "db"
+        ],
+        [
+          "gb",
+          "gb"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": "octave",
+      "value": 0,
+      "min": 0,
+      "max": 9
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Обозначение нот на основе списка из библиотеки musicpy. Часть значений может быть некорректным.",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_note_extended
+  *
+  */
+
+{
+  "type": "common_music_note_extended",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "нота %1 %2 октава %3 %4 длина %5 %6 громкость %7",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "note",
+      "options": [
+        [
+          "C",
+          "C"
+        ],
+        [
+          "C#",
+          "C#"
+        ],
+        [
+          "D",
+          "D"
+        ],
+        [
+          "D#",
+          "D#"
+        ],
+        [
+          "E",
+          "E"
+        ],
+        [
+          "F",
+          "F"
+        ],
+        [
+          "F#",
+          "F#"
+        ],
+        [
+          "G",
+          "G"
+        ],
+        [
+          "G#",
+          "G#"
+        ],
+        [
+          "A",
+          "A"
+        ],
+        [
+          "A#",
+          "A#"
+        ],
+        [
+          "B",
+          "B"
+        ],
+        [
+          "Bb",
+          "Bb"
+        ],
+        [
+          "Eb",
+          "Eb"
+        ],
+        [
+          "Ab",
+          "Ab"
+        ],
+        [
+          "Db",
+          "Db"
+        ],
+        [
+          "Gb",
+          "Gb"
+        ],
+        [
+          "c",
+          "c"
+        ],
+        [
+          "c#",
+          "c#"
+        ],
+        [
+          "d",
+          "d"
+        ],
+        [
+          "d#",
+          "d#"
+        ],
+        [
+          "e",
+          "e"
+        ],
+        [
+          "f",
+          "f"
+        ],
+        [
+          "f#",
+          "f#"
+        ],
+        [
+          "g",
+          "g"
+        ],
+        [
+          "g#",
+          "g#"
+        ],
+        [
+          "a",
+          "a"
+        ],
+        [
+          "a#",
+          "a#"
+        ],
+        [
+          "b",
+          "b"
+        ],
+        [
+          "bb",
+          "bb"
+        ],
+        [
+          "eb",
+          "eb"
+        ],
+        [
+          "ab",
+          "ab"
+        ],
+        [
+          "db",
+          "db"
+        ],
+        [
+          "gb",
+          "gb"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": "octave",
+      "value": 0,
+      "min": 0,
+      "max": 9
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": "duration",
+      "value": 1,
+      "min": 0,
+      "max": 127,
+      "precision": 0.1
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": " strength ",
+      "value": 50,
+      "min": 0,
+      "max": 127,
+      "precision": 0.1
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Обозначение нот на основе списка из библиотеки musicpy. Часть значений может быть некорректным. Длина измеряется в тактах.",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_classic_note
+  *
+  */
+
+{
+  "type": "common_music_classic_note",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "нота %1 %2 oктава %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "note",
+      "options": [
+        [
+          "C",
+          "C"
+        ],
+        [
+          "D",
+          "D"
+        ],
+        [
+          "E",
+          "E"
+        ],
+        [
+          "F",
+          "F"
+        ],
+        [
+          "G",
+          "G"
+        ],
+        [
+          "A",
+          "A"
+        ],
+        [
+          "B",
+          "B"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": "octave",
+      "value": 0,
+      "min": 0,
+      "max": 9
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Обозначение нот на основе учебника. Длина измеряется в тактах.",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_classic_note_extended
+  *
+  */
+
+{
+  "type": "common_music_classic_note_extended",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "нота %1 %2 октава %3 %4 длина %5 %6 громкость %7",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "note",
+      "options": [
+        [
+          "C",
+          "C"
+        ],
+        [
+          "D",
+          "D"
+        ],
+        [
+          "E",
+          "E"
+        ],
+        [
+          "F",
+          "F"
+        ],
+        [
+          "G",
+          "G"
+        ],
+        [
+          "A",
+          "A"
+        ],
+        [
+          "B",
+          "B"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": "octave",
+      "value": 0,
+      "min": 0,
+      "max": 9
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": "duration",
+      "value": 1,
+      "min": 0,
+      "max": 127,
+      "precision": 0.1
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_number",
+      "name": " strength ",
+      "value": 50,
+      "min": 0,
+      "max": 127,
+      "precision": 0.1
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Обозначение нот на основе учебника. Длина измеряется в тактах.",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_mixer_get_bussy
+  *
+  */
+
+{
+  "type": "common_music_mixer_get_bussy",
+  "message0": "получить состояние микшера",
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_function_create_chord
+  *
+  */
+
+{
+  "type": "common_music_function_create_chord",
+  "message0": "создать аккорд %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "chord"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_function_create_instrument
+  *
+  */
+
+{
+  "type": "common_music_function_create_instrument",
+  "message0": "создать инструмент %1 %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "instrument"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_spes_symbols_with_numeric
+  *
+  */
+
+{
+  "type": "common_music_spes_symbols_with_numeric",
+  "message0": "спецсимвол %1 %2 значение %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "symbols",
+      "options": [
+        [
+          "^",
+          "^"
+        ],
+        [
+          "@",
+          "@"
+        ],
+        [
+          "*",
+          "*"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "NAME"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+/**
+  * common_music_spes_symbols
+  *
+  */
+{
+  "type": "common_music_spes_symbols",
+  "lastDummyAlign0": "CENTRE",
+  "message0": "спецсимвол %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "symbols",
+      "options": [
+        [
+          "|",
+          "|"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }
 ]);
