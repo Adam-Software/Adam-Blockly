@@ -730,7 +730,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_major_chord",
-  "message0": "Мажорные аккорды %1 %2",
+  "message0": "Мажорный аккорд %1 %2",
   "args0": [
     {
       "type": "input_dummy"
@@ -804,7 +804,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_minor_chord",
-  "message0": "Минорные аккорды %1 %2",
+  "message0": "Минорный аккорд %1 %2",
   "args0": [
     {
       "type": "input_dummy"
@@ -878,7 +878,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_minor_major_seventh_chords",
-  "message0": "Малые мажорные септаккорды %1 %2",
+  "message0": "Малый мажорный септаккорд %1 %2",
   "args0": [
     {
       "type": "input_dummy"
@@ -952,7 +952,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_minor_minor_seventh_chords",
-  "message0": "Малые минорные септаккорды %1 %2",
+  "message0": "Малый минорный септаккорд %1 %2",
   "args0": [
     {
       "type": "input_dummy"
@@ -1026,7 +1026,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_major_chord_extended",
-  "message0": "Мажорные аккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "message0": "Мажорный аккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1112,7 +1112,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_minor_chord_extended",
-  "message0": "Минорные аккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "message0": "Минорный аккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1198,7 +1198,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_minor_major_seventh_chords_extended",
-  "message0": "Малые мажорные септаккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "message0": "Малый мажорный септаккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1284,7 +1284,7 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_minor_minor_seventh_chords_extended",
-  "message0": "Малые минорные септаккорды %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
+  "message0": "Малый минорный септаккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1939,6 +1939,37 @@ Blockly.defineBlocksWithJsonArray([
   ],
   "inputsInline": false,
   "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_function_play
+  *
+  */
+
+{
+  "type": "common_music_function_play",
+  "message0": "проиграть %1 мелодия %2 удары в минуту %3 инструмент %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "music_variable"
+    },
+    {
+      "type": "input_value",
+      "name": "bmp"
+    },
+    {
+      "type": "input_value",
+      "name": "instrument_name"
+    }
+  ],
+  "inputsInline": false,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
