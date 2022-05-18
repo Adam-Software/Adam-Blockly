@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C');
+Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy');
 
 /**
   * common_eye_pack
@@ -51,10 +51,10 @@ Blockly.Python['common_eye_pack_simple'] = function(block) {
 
 Blockly.Python['common_import_smbus'] = function(block) {
   Blockly.Python.definitions_['import_smbus'] = 'import smbus';
-  var value_bus_number = Blockly.Python.valueToCode(block, 'bus_number', Blockly.Python.ORDER_ATOMIC);
-  
+  var value_bus_number = Blockly.Python.valueToCode(block, 'bus_number', Blockly.Python.ORDER_ATOMIC)
+
   var code = 'smbus.SMBus(' + value_bus_number + ')\n';
-  
+
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -462,9 +462,11 @@ Blockly.Python['common_music_mixer_get_bussy'] = function(block) {
   */
 
 Blockly.Python['common_music_function_create_chord'] = function(block) {
+  Blockly.Python.definitions_['from_musicpy_import_*'] = 'from musicpy import *';
   var value_chord = Blockly.Python.valueToCode(block, 'chord', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...\n';
+
+  var code = 'C(' + value_chord +' )';
+
   return code;
 };
 
@@ -474,11 +476,12 @@ Blockly.Python['common_music_function_create_chord'] = function(block) {
   */
 
 Blockly.Python['common_music_function_create_instrument'] = function(block) {
+  Blockly.Python.definitions_['from_musicpy_import_*'] = 'from musicpy import *';
   var statements_instrument = Blockly.Python.statementToCode(block, 'instrument');
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+
+  var code = '('+ statements_instrument + ')';
+  
+  return [code, Blockly.Python.ORDER_NONE];;
 };
 
 /**
