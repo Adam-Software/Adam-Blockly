@@ -1902,19 +1902,15 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_function_create_chord",
-  "message0": "создать аккорд %1 %2",
+  "message0": "создать аккорд %1",
   "args0": [
-    {
-      "type": "input_dummy"
-    },
     {
       "type": "input_value",
       "name": "chord"
     }
   ],
   "inputsInline": false,
-  "previousStatement": null,
-  "nextStatement": null,
+  "output": null,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
@@ -1927,13 +1923,10 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_function_create_instrument",
-  "message0": "создать инструмент %1 %2",
+  "message0": "создать инструмент %1",
   "args0": [
     {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_statement",
+      "type": "input_value",
       "name": "instrument"
     }
   ],
