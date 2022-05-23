@@ -1970,6 +1970,8 @@ Blockly.defineBlocksWithJsonArray([
     }
   ],
   "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
@@ -2033,7 +2035,11 @@ Blockly.defineBlocksWithJsonArray([
       "options": [
         [
           "|",
-          "|"
+          " | "
+        ],
+	[
+          "| + перенос строки",
+          " |\n"
         ]
       ]
     }
@@ -2041,6 +2047,39 @@ Blockly.defineBlocksWithJsonArray([
   "inputsInline": false,
   "previousStatement": null,
   "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_fraction
+  *
+  */
+
+{
+  "type": "common_music_fraction",
+  "message0": "%1 / %2",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "numerator",
+      "value": 1,
+      "min": 1,
+      "max": 9,
+      "precision": 1
+    },
+    {
+      "type": "field_number",
+      "name": "denominator",
+      "value": 2,
+      "min": 1,
+      "max": 9,
+      "precision": 1
+    }
+  ],
+  "inputsInline": true,
+  "output": null,
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""

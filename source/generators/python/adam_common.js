@@ -274,10 +274,10 @@ Blockly.Python['common_sensor_gravity'] = function(block) {
 
 Blockly.Python['common_music_major_chord'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+
+  var code = '\'' + dropdown_chord + '\'';
+
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 /**
@@ -287,10 +287,10 @@ Blockly.Python['common_music_major_chord'] = function(block) {
 
 Blockly.Python['common_music_minor_chord'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  
+  var code = '\'' + dropdown_chord + '\'';
+  
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 /**
@@ -300,10 +300,10 @@ Blockly.Python['common_music_minor_chord'] = function(block) {
 
 Blockly.Python['common_music_minor_major_seventh_chords'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+
+  var code = '\'' + dropdown_chord + '\'';
+
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 /**
@@ -313,10 +313,10 @@ Blockly.Python['common_music_minor_major_seventh_chords'] = function(block) {
 
 Blockly.Python['common_music_minor_minor_seventh_chords'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  
+  var code = '\'' + dropdown_chord + '\'';
+  
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 /**
@@ -329,10 +329,10 @@ Blockly.Python['common_music_major_chord_extended'] = function(block) {
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
   var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
   var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+  
+  var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh;
+  
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 /**
@@ -345,10 +345,10 @@ Blockly.Python['common_music_minor_chord_extended'] = function(block) {
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
   var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
   var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+
+  var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh;
+
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 /**
@@ -361,10 +361,10 @@ Blockly.Python['common_music_minor_major_seventh_chords_extended'] = function(bl
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
   var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
   var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+
+  var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh;
+
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 /**
@@ -377,10 +377,10 @@ Blockly.Python['common_music_minor_minor_seventh_chords_extended'] = function(bl
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
   var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
   var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, Blockly.Python.ORDER_NONE];
+
+  var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh;
+
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
 
@@ -392,9 +392,9 @@ Blockly.Python['common_music_minor_minor_seventh_chords_extended'] = function(bl
 Blockly.Python['common_music_note'] = function(block) {
   var dropdown_note = block.getFieldValue('note');
   var number_octave = block.getFieldValue('octave');
-  // TODO: Assemble Python into code variable.
+  
   var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
+  
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -450,9 +450,9 @@ Blockly.Python['common_music_classic_note_extended'] = function(block) {
   */
 
 Blockly.Python['common_music_mixer_get_bussy'] = function(block) {
-  // TODO: Assemble Python into code variable.
-  var code = '...';
-  // TODO: Change ORDER_NONE to the correct strength.
+  
+  var code = 'pygame.mixer.music.get_busy()';
+  
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -465,7 +465,7 @@ Blockly.Python['common_music_function_create_chord'] = function(block) {
   Blockly.Python.definitions_['from_musicpy_import_*'] = 'from musicpy import *';
   var value_chord = Blockly.Python.valueToCode(block, 'chord', Blockly.Python.ORDER_ATOMIC);
 
-  var code = 'C(' + value_chord +' )';
+  var code = 'C(' + value_chord + ')';
 
   return code;
 };
@@ -479,9 +479,11 @@ Blockly.Python['common_music_function_create_instrument'] = function(block) {
   Blockly.Python.definitions_['from_musicpy_import_*'] = 'from musicpy import *';
   var statements_instrument = Blockly.Python.statementToCode(block, 'instrument');
 
-  var code = '('+ statements_instrument + ')';
-  
-  return [code, Blockly.Python.ORDER_NONE];;
+  // replace(/ /g, "") - removed all whitespace from statements_instrument 
+  //var code = '(' + statements_instrument.replace(/ /g, "") + ')';
+  var code = '(' + statements_instrument.trimStart().trimEnd() + ')';
+ 
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 /**
@@ -493,7 +495,44 @@ Blockly.Python['common_music_function_play'] = function(block) {
   var value_music_variable = Blockly.Python.valueToCode(block, 'music_variable', Blockly.Python.ORDER_ATOMIC);
   var value_bmp = Blockly.Python.valueToCode(block, 'bmp', Blockly.Python.ORDER_ATOMIC);
   var value_instrument_name = Blockly.Python.valueToCode(block, 'instrument_name', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  //play(guitar, bpm=100, instrument=25)
+  var code = 'play(' + value_music_variable + ', bpm=' + value_bmp  + ', instrument=' + value_instrument_name + ')\n';
+
   return code;
+};
+
+/**
+  * common_music_spes_symbols_with_numeric
+  *
+  */
+
+Blockly.Python['common_music_spes_symbols_with_numeric'] = function(block) {
+  var dropdown_symbols = block.getFieldValue('symbols');
+  var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
+  
+  var code = dropdown_symbols + value_name;
+  
+  return code;
+};
+
+/**
+  * common_music_spes_symbols
+  *
+  */
+
+Blockly.Python['common_music_spes_symbols'] = function(block) {
+  var dropdown_symbols = block.getFieldValue('symbols');
+
+  var code = dropdown_symbols;
+
+  return code;
+};
+
+Blockly.Python['common_music_fraction'] = function(block) {
+  var number_numerator = block.getFieldValue('numerator');
+  var number_denominator = block.getFieldValue('denominator');
+  
+  var code = number_numerator + '/' + number_denominator;
+ 
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
