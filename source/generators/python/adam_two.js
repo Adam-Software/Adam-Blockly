@@ -297,7 +297,7 @@ Blockly.Python['wheels_left_leg'] = function(block) {
   var value_first_motor = Blockly.Python.valueToCode(block, 'first_motor', Blockly.Python.ORDER_ATOMIC);
   var value_second_motor = Blockly.Python.valueToCode(block, 'second_motor', Blockly.Python.ORDER_ATOMIC);
   
-  var code = variable_imu + '.motor(' + value_first_motor + ', ' + value_second_motor + ', 17, 0)\n';
+  var code = variable_imu + '.motor(' + value_first_motor + ', ' + value_second_motor + ', 17, 255)\n';
 
   return code;
 };
@@ -311,7 +311,7 @@ Blockly.Python['wheels_right_leg'] = function(block) {
   var value_first_motor = Blockly.Python.valueToCode(block, 'first_motor', Blockly.Python.ORDER_ATOMIC);
   var value_second_motor = Blockly.Python.valueToCode(block, 'second_motor', Blockly.Python.ORDER_ATOMIC);
 
-  var code = variable_imu + '.motor(' + value_first_motor + ', ' + value_second_motor + ', 103, 0)\n';
+  var code = variable_imu + '.motor(' + value_first_motor + ', ' + value_second_motor + ', 103, 255)\n';
   
   return code;
 };
