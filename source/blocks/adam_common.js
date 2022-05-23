@@ -1902,11 +1902,8 @@ Blockly.defineBlocksWithJsonArray([
 
 {
   "type": "common_music_function_create_chord",
-  "message0": "создать аккорд %1 %2",
+  "message0": "создать аккорд %1",
   "args0": [
-    {
-      "type": "input_dummy"
-    },
     {
       "type": "input_value",
       "name": "chord"

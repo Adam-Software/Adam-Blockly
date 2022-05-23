@@ -462,11 +462,8 @@ Blockly.Python['common_music_mixer_get_bussy'] = function(block) {
   */
 
 Blockly.Python['common_music_function_create_chord'] = function(block) {
-  Blockly.Python.definitions_['from_musicpy_import_*'] = 'from musicpy import *';
   var value_chord = Blockly.Python.valueToCode(block, 'chord', Blockly.Python.ORDER_ATOMIC);
-
   var code = 'C(' + value_chord + ')';
-
   return code;
 };
 
@@ -474,17 +471,15 @@ Blockly.Python['common_music_function_create_chord'] = function(block) {
   * common_music_function_create_instrument
   *
   */
-
 Blockly.Python['common_music_function_create_instrument'] = function(block) {
   Blockly.Python.definitions_['from_musicpy_import_*'] = 'from musicpy import *';
-  var statements_instrument = Blockly.Python.statementToCode(block, 'instrument');
-
-  // replace(/ /g, "") - removed all whitespace from statements_instrument 
-  //var code = '(' + statements_instrument.replace(/ /g, "") + ')';
-  var code = '(' + statements_instrument.trimStart().trimEnd() + ')';
  
-  return [code, Blockly.Python.ORDER_NONE];
+  var statements_instrument = Blockly.Python.statementToCode(block, 'instrument');
+  var code = '(' + statements_instrument.trimStart().trimEnd() + ')';
+
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
 
 /**
   * common_music_function_play
