@@ -803,5 +803,129 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 270,
   "tooltip": "Управление колесами на правой ноге",
   "helpUrl": ""
+},
+
+/**
+ * wheels_left_leg_extended
+ * 
+ */
+{
+  "type": "wheels_left_leg_extended",
+  "message0": "колеса на левой ноге %1 переменная AdamIMU %2 %3 первый мотор %4 второй мотор %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "first_motor",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "second_motor",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Управление колесами",
+  "helpUrl": ""
+},
+
+/**
+ * wheels_right_leg_extended
+ * 
+ */
+{
+  "type": "wheels_right_leg_extended",
+  "message0": "колеса на правой ноге %1 переменная AdamIMU %2 %3 первый мотор %4 второй мотор %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "first_motor",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "second_motor",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Управление ногами",
+  "helpUrl": ""
+},
+
+/**
+ * wheels_left_rangefinder
+ * 
+ */
+ 
+{
+  "type": "wheels_left_rangefinder",
+  "message0": "левый дальномер %1 переменная AdamIMU %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Получение данных с дальномера расположенных на левой ноге",
+  "helpUrl": ""
+},
+
+/**
+ * wheels_right_rangefinder
+ * 
+ */
+ 
+{
+  "type": "wheels_right_rangefinder",
+  "message0": "правый дальномер %1 переменная AdamIMU %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Получение данных с дальномера расположенных на правой ноге",
+  "helpUrl": ""
 }
 ]);

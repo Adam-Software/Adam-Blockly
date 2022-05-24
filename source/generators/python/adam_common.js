@@ -531,3 +531,9 @@ Blockly.Python['common_music_fraction'] = function(block) {
  
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+Blockly.Python['common_comment'] = function(block) {
+  var text_comment_value = block.getFieldValue('comment_value');
+  var code = '# ' + text_comment_value + '\n';
+  return code;
+};

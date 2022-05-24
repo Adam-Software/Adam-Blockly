@@ -2080,5 +2080,28 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
+},
+
+/**
+  * common_comment
+  *
+  */
+
+{
+  "type": "common_comment",
+  "message0": "коментарий %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "comment_value",
+      "text": "default"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }
 ]);
