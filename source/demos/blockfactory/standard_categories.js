@@ -11,6 +11,7 @@
  * that particular category. Also has a list of core block types provided
  * by Blockly.
  *
+ * @author Emma Dauterman (evd2014)
  */
  'use strict';
 

@@ -10,6 +10,7 @@
  * toolbox XML for the exporter's workspace.  Depends on the FactoryUtils for
  * its code generation functions.
  *
+ * @author quachtina96 (Tina Quach)
  */
 'use strict';
 
@@ -89,7 +90,7 @@ BlockExporterTools.prototype.getBlockDefinitions =
   }
 
   // Surround json with [] and comma separate items.
-  if (definitionFormat === "JSON") {
+  if (definitionFormat == "JSON") {
     return "[" + blockCode.join(",\n") + "]";
   }
   return blockCode.join("\n\n");

@@ -10,6 +10,7 @@
  * option has a checkbox, a label, and a preview workspace through which to
  * view the block.
  *
+ * @author quachtina96 (Tina Quach)
  */
 'use strict';
 
