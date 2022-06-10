@@ -55,6 +55,32 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * common_app_echo_with_text_param_variable
+  *
+  */
+{
+  "type": "common_app_echo_with_text_param_variable",
+  "message0": "echo %1 %2",
+  "args0": [
+    {
+      "type": "field_variable",
+      "name": "text",
+      "variable": "text"
+    },
+    {
+      "type": "input_value",
+      "name": "input_string",
+      "check": "String"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "echo sh",
+  "helpUrl": ""
+},
+
+/**
   * common_app_echo
   *
   */

@@ -52,6 +52,17 @@ Blockly.Python['common_app_echo_with_text_param'] = function(block) {
 };
 
 /**
+  * common_app_echo_with_text_param_variable
+  *
+  */
+Blockly.Python['common_app_echo_with_text_param_variable'] = function(block) {
+  var variable_text = Blockly.Python.nameDB_.getName(block.getFieldValue('text'), Blockly.Variables.NAME_TYPE);
+  var value_input_string = Blockly.Python.valueToCode(block, 'input_string', Blockly.Python.ORDER_NONE);
+  var code = String.format('f"echo ' + "{{0}}" + "{1}" + '"', variable_text, value_input_string);
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
   * common_app_rhvoice
   *
   */

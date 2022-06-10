@@ -10,8 +10,7 @@ Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2
 /**
   * common_eye_pack
   *
-  */
-  
+  */  
 Blockly.Python['common_eye_pack'] = function (block) {
     var value_addr = Blockly.Python.valueToCode(block, 'addr', Blockly.Python.ORDER_ATOMIC);
     var value_reg = Blockly.Python.valueToCode(block, 'reg', Blockly.Python.ORDER_ATOMIC);
@@ -30,7 +29,6 @@ Blockly.Python['common_eye_pack'] = function (block) {
   * common_eye_pack_simple
   *
   */
-
 Blockly.Python['common_eye_pack_simple'] = function(block) {
   var value_reg = Blockly.Python.valueToCode(block, 'reg', Blockly.Python.ORDER_ATOMIC);
   var value_color = Blockly.Python.valueToCode(block, 'color', Blockly.Python.ORDER_ATOMIC);
@@ -48,7 +46,6 @@ Blockly.Python['common_eye_pack_simple'] = function(block) {
   * common_import_smbus
   *
   */
-
 Blockly.Python['common_import_smbus'] = function(block) {
   Blockly.Python.definitions_['import_smbus'] = 'import smbus';
   var value_bus_number = Blockly.Python.valueToCode(block, 'bus_number', Blockly.Python.ORDER_ATOMIC)
@@ -62,7 +59,6 @@ Blockly.Python['common_import_smbus'] = function(block) {
   * common_write_i2c_block_data
   *
   */
-
 Blockly.Python['common_write_i2c_block_data'] = function(block) {
   var variable_bus = Blockly.Python.nameDB_.getName(block.getFieldValue('bus'), Blockly.Variables.NAME_TYPE);
   var value_addr = Blockly.Python.valueToCode(block, 'addr', Blockly.Python.ORDER_ATOMIC);
@@ -74,6 +70,10 @@ Blockly.Python['common_write_i2c_block_data'] = function(block) {
   return code;
 };
 
+/**
+  * common_simple_write_i2c_block_data
+  *
+  */
 Blockly.Python['common_simple_write_i2c_block_data'] = function(block) {
   var variable_bus = Blockly.Python.nameDB_.getName(block.getFieldValue('bus'), Blockly.Variables.NAME_TYPE);
   var value_addr = Blockly.Python.valueToCode(block, 'addr', Blockly.Python.ORDER_ATOMIC);
@@ -88,7 +88,6 @@ Blockly.Python['common_simple_write_i2c_block_data'] = function(block) {
   * common_eye_color
   *
   */
-
 Blockly.Python['common_eye_color'] = function(block) {
   var dropdown_color = block.getFieldValue('color');
   
@@ -101,7 +100,6 @@ Blockly.Python['common_eye_color'] = function(block) {
   * common_eye_diode_number
   *
   */
-
 Blockly.Python['common_eye_diode_number'] = function(block) {
   var number_diode_number = block.getFieldValue('diode_number');
   
@@ -114,7 +112,6 @@ Blockly.Python['common_eye_diode_number'] = function(block) {
   * common_reg_constant
   *
   */
-
 Blockly.Python['common_reg_constant'] = function(block) {
   var dropdown_const = block.getFieldValue('const');
   
@@ -127,7 +124,6 @@ Blockly.Python['common_reg_constant'] = function(block) {
   * common_i2c_device_address
   *
   */
-  
 Blockly.Python['common_i2c_device_address'] = function(block) {
   var dropdown_device_addr = block.getFieldValue('device_addr');
   
@@ -140,7 +136,6 @@ Blockly.Python['common_i2c_device_address'] = function(block) {
   * common_i2c_sensor_device
   *
   */
-  
 Blockly.Python['common_i2c_sensor_device'] = function(block) {
   Blockly.Python.definitions_['import_board'] = 'import board';
   var code = 'board.I2C()';
@@ -151,7 +146,6 @@ Blockly.Python['common_i2c_sensor_device'] = function(block) {
   * common_i2c_sensor_device_extended
   *
   */
-  
 Blockly.Python['common_i2c_sensor_device_extended'] = function(block) {
   Blockly.Python.definitions_['from_adafruit_extended_bus_import_ExtendedI2C_as_I2C'] = 'from adafruit_extended_bus import ExtendedI2C as I2C';
   var value_i2c_bus = Blockly.Python.valueToCode(block, 'i2c_bus', Blockly.Python.ORDER_ATOMIC);
@@ -163,7 +157,6 @@ Blockly.Python['common_i2c_sensor_device_extended'] = function(block) {
   * common_sensor_declaration
   *
   */
-
 Blockly.Python['common_sensor_declaration'] = function(block) {
   Blockly.Python.definitions_['import_adafruit_bno055'] = 'import adafruit_bno055';
   var variable_i2c_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('i2c_variable'), Blockly.Variables.NAME_TYPE);
@@ -171,6 +164,10 @@ Blockly.Python['common_sensor_declaration'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+/**
+  * common_sensor_declaration_extended
+  *
+  */
 Blockly.Python['common_sensor_declaration_extended'] = function(block) {
   Blockly.Python.definitions_['import_adafruit_bno055'] = 'import adafruit_bno055';
   var variable_i2c_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('i2c_variable'), Blockly.Variables.NAME_TYPE);
@@ -183,7 +180,6 @@ Blockly.Python['common_sensor_declaration_extended'] = function(block) {
   * common_sensor_temperature
   *
   */
-
 Blockly.Python['common_sensor_temperature'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.temperature';
@@ -194,7 +190,6 @@ Blockly.Python['common_sensor_temperature'] = function(block) {
   * common_sensor_acceleration
   *
   */
-
 Blockly.Python['common_sensor_acceleration'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.acceleration';
@@ -205,7 +200,6 @@ Blockly.Python['common_sensor_acceleration'] = function(block) {
   * common_sensor_magnetometer
   *
   */
-
 Blockly.Python['common_sensor_magnetometer'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.magnetic';
@@ -216,7 +210,6 @@ Blockly.Python['common_sensor_magnetometer'] = function(block) {
   * common_sensor_gyro
   *
   */
-
 Blockly.Python['common_sensor_gyro'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.gyro';
@@ -227,7 +220,6 @@ Blockly.Python['common_sensor_gyro'] = function(block) {
   * common_sensor_euler
   *
   */
-
 Blockly.Python['common_sensor_euler'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.euler';
@@ -238,7 +230,6 @@ Blockly.Python['common_sensor_euler'] = function(block) {
   * common_sensor_quaternion
   *
   */
-
 Blockly.Python['common_sensor_quaternion'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.quaternion';
@@ -249,7 +240,6 @@ Blockly.Python['common_sensor_quaternion'] = function(block) {
   * common_sensor_linear_acceleration
   *
   */
-
 Blockly.Python['common_sensor_linear_acceleration'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.linear_acceleration';
@@ -260,7 +250,6 @@ Blockly.Python['common_sensor_linear_acceleration'] = function(block) {
   * common_sensor_linear_gravity
   *
   */
-
 Blockly.Python['common_sensor_gravity'] = function(block) {
   var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
   var code = variable_sensor_variable + '.gravity';
@@ -271,12 +260,9 @@ Blockly.Python['common_sensor_gravity'] = function(block) {
   * common_music_major_chord
   *
   */
-
 Blockly.Python['common_music_major_chord'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-
   var code = '\'' + dropdown_chord + '\'';
-
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -284,12 +270,9 @@ Blockly.Python['common_music_major_chord'] = function(block) {
   * common_music_minor_chord
   *
   */
-
 Blockly.Python['common_music_minor_chord'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-  
   var code = '\'' + dropdown_chord + '\'';
-  
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -297,7 +280,6 @@ Blockly.Python['common_music_minor_chord'] = function(block) {
   * common_music_minor_major_seventh_chords
   *
   */
-
 Blockly.Python['common_music_minor_major_seventh_chords'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
 
@@ -310,12 +292,9 @@ Blockly.Python['common_music_minor_major_seventh_chords'] = function(block) {
   * common_music_minor_minor_seventh_chords
   *
   */
-
 Blockly.Python['common_music_minor_minor_seventh_chords'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-  
   var code = '\'' + dropdown_chord + '\'';
-  
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -323,15 +302,12 @@ Blockly.Python['common_music_minor_minor_seventh_chords'] = function(block) {
   * common_music_major_chord_extended
   *
   */
-
 Blockly.Python['common_music_major_chord_extended'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
   var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
   var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
-  
-  var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh;
-  
+  var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh; 
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -339,7 +315,6 @@ Blockly.Python['common_music_major_chord_extended'] = function(block) {
   * common_music_minor_chord_extended
   *
   */
-
 Blockly.Python['common_music_minor_chord_extended'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
@@ -355,15 +330,12 @@ Blockly.Python['common_music_minor_chord_extended'] = function(block) {
   * common_music_minor_major_seventh_chords_extended
   *
   */
-
 Blockly.Python['common_music_minor_major_seventh_chords_extended'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
   var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
   var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
-
   var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh;
-
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -371,15 +343,12 @@ Blockly.Python['common_music_minor_major_seventh_chords_extended'] = function(bl
   * common_music_minor_minor_seventh_chords_extended
   *
   */
-
 Blockly.Python['common_music_minor_minor_seventh_chords_extended'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
   var value_major_third = Blockly.Python.valueToCode(block, 'major_third', Blockly.Python.ORDER_ATOMIC);
   var value_perfect_fifth = Blockly.Python.valueToCode(block, 'perfect_fifth', Blockly.Python.ORDER_ATOMIC);
   var value_major_seventh = Blockly.Python.valueToCode(block, 'major_seventh', Blockly.Python.ORDER_ATOMIC);
-
   var code = '\'' + dropdown_chord + '\'' + ', ' + value_major_third + ', ' + value_perfect_fifth + ', ' + value_major_seventh;
-
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -388,13 +357,10 @@ Blockly.Python['common_music_minor_minor_seventh_chords_extended'] = function(bl
   * common_music_note
   *
   */
-
 Blockly.Python['common_music_note'] = function(block) {
   var dropdown_note = block.getFieldValue('note');
   var number_octave = block.getFieldValue('octave');
-  
   var code = '...';
-  
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -402,7 +368,6 @@ Blockly.Python['common_music_note'] = function(block) {
   * common_music_note_extended
   *
   */
-
 Blockly.Python['common_music_note_extended'] = function(block) {
   var dropdown_note = block.getFieldValue('note');
   var number_octave = block.getFieldValue('octave');
@@ -448,11 +413,8 @@ Blockly.Python['common_music_classic_note_extended'] = function(block) {
   * common_music_mixer_get_bussy
   *
   */
-
 Blockly.Python['common_music_mixer_get_bussy'] = function(block) {
-  
   var code = 'pygame.mixer.music.get_busy()';
-  
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -460,7 +422,6 @@ Blockly.Python['common_music_mixer_get_bussy'] = function(block) {
   * common_music_function_create_chord
   *
   */
-
 Blockly.Python['common_music_function_create_chord'] = function(block) {
   var value_chord = Blockly.Python.valueToCode(block, 'chord', Blockly.Python.ORDER_ATOMIC);
   var code = 'C(' + value_chord + ')';
@@ -473,10 +434,8 @@ Blockly.Python['common_music_function_create_chord'] = function(block) {
   */
 Blockly.Python['common_music_function_create_instrument'] = function(block) {
   Blockly.Python.definitions_['from_musicpy_import_*'] = 'from musicpy import *';
- 
   var statements_instrument = Blockly.Python.statementToCode(block, 'instrument');
   var code = '(' + statements_instrument.trimStart().trimEnd() + ')';
-
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -485,14 +444,11 @@ Blockly.Python['common_music_function_create_instrument'] = function(block) {
   * common_music_function_play
   *
   */
-
 Blockly.Python['common_music_function_play'] = function(block) {
   var value_music_variable = Blockly.Python.valueToCode(block, 'music_variable', Blockly.Python.ORDER_ATOMIC);
   var value_bmp = Blockly.Python.valueToCode(block, 'bmp', Blockly.Python.ORDER_ATOMIC);
   var value_instrument_name = Blockly.Python.valueToCode(block, 'instrument_name', Blockly.Python.ORDER_ATOMIC);
-  //play(guitar, bpm=100, instrument=25)
   var code = 'play(' + value_music_variable + ', bpm=' + value_bmp  + ', instrument=' + value_instrument_name + ')\n';
-
   return code;
 };
 
@@ -500,7 +456,6 @@ Blockly.Python['common_music_function_play'] = function(block) {
   * common_music_spes_symbols_with_numeric
   *
   */
-
 Blockly.Python['common_music_spes_symbols_with_numeric'] = function(block) {
   var dropdown_symbols = block.getFieldValue('symbols');
   var value_name = Blockly.Python.valueToCode(block, 'NAME', Blockly.Python.ORDER_ATOMIC);
@@ -514,26 +469,74 @@ Blockly.Python['common_music_spes_symbols_with_numeric'] = function(block) {
   * common_music_spes_symbols
   *
   */
-
 Blockly.Python['common_music_spes_symbols'] = function(block) {
   var dropdown_symbols = block.getFieldValue('symbols');
-
   var code = dropdown_symbols;
-
   return code;
 };
 
+/**
+  * common_music_fraction
+  *
+  */
 Blockly.Python['common_music_fraction'] = function(block) {
   var number_numerator = block.getFieldValue('numerator');
   var number_denominator = block.getFieldValue('denominator');
-  
   var code = number_numerator + '/' + number_denominator;
- 
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
+/**
+  * common_comment
+  *
+  */
 Blockly.Python['common_comment'] = function(block) {
   var text_comment_value = block.getFieldValue('comment_value');
   var code = '# ' + text_comment_value + '\n';
   return code;
 };
+
+/**
+  * common_say_native
+  *
+  */
+Blockly.Python['common_say_native'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+/**
+  * common_say_native_procedure
+  *
+  */
+Blockly.Python['common_say_native_procedure'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = '...\n';
+  return code;
+};
+
+/**
+  * common_say_voices_list
+  *
+  */
+Blockly.Python['common_say_voices_list'] = function(block) {
+  var dropdown_voice_profile = block.getFieldValue('voice_profile');
+  var code = String.format("'{0}'", dropdown_voice_profile);
+  return [code, Blockly.Python.ORDER_ATOMIC];;
+};
+
+if (!String.format) {
+  String.format = function(format) {
+    var args = Array.prototype.slice.call(arguments, 1);
+    return format.replace(/{(\d+)}/g, function(match, number) { 
+      return typeof args[number] != 'undefined'
+        ? args[number] 
+        : match
+      ;
+    });
+  };
+}
+

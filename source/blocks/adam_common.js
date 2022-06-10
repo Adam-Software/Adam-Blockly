@@ -9,9 +9,7 @@ Blockly.defineBlocksWithJsonArray([
 /**
   * common_eye_pack
   *
-  */
-  
-{
+  */{
   "type": "common_eye_pack",
   "message0": "пакет данных %1 адрес %2 константа регистра %3 цвет %4 от диода %5 до диода %6 с шагом %7 время %8",
   "args0": [
@@ -64,7 +62,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_eye_pack_simple
   *
   */
-
 {
   "type": "common_eye_pack_simple",
   "message0": "простой пакет данных  %1 константа регистра %2 цвет %3 от диода %4 до диода %5 с шагом %6 время %7",
@@ -114,7 +111,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_import_smbus
   *
   */
-  
 {
   "type": "common_import_smbus",
   "message0": "инициализировать SMBus  %1 открыть шину I2C %2",
@@ -139,7 +135,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_write_i2c_block_data
   *
   */
-  
 {
   "type": "common_write_i2c_block_data",
   "message0": "запись массива данных %1 переменная I2C шины %2 %3  I2C адрес устройства %4 адрес регистра %5 пакет данных %6",
@@ -183,7 +178,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_simple_write_i2c_block_data
   *
   */
-
 {
   "type": "common_simple_write_i2c_block_data",
   "message0": "простая запись массива данных %1 переменная I2C шины %2 %3  I2C адрес устройства %4 пакет данных %5",
@@ -222,7 +216,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_eye_color
   *
   */
-  
 {
   "type": "common_eye_color",
   "message0": "цвет диода %1",
@@ -260,7 +253,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_eye_diode_number
   *
   */
-
 {
   "type": "common_eye_diode_number",
   "message0": "Номер диода %1",
@@ -284,7 +276,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_reg_constant
   *
   */
-
 {
   "type": "common_reg_constant",
   "message0": "константы регистра %1",
@@ -338,7 +329,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_i2c_device_address
   *
   */
-
 {
   "type": "common_i2c_device_address",
   "message0": "переменные I2C устройств %1",
@@ -368,7 +358,6 @@ Blockly.defineBlocksWithJsonArray([
   * "common_i2c_sensor_device"
   *
   */
-
 {
   "type": "common_i2c_sensor_device",
   "message0": "инициализация шины I2C",
@@ -382,7 +371,6 @@ Blockly.defineBlocksWithJsonArray([
   * "common_i2c_sensor_device_extended"
   *
   */
-
 {
   "type": "common_i2c_sensor_device_extended",
   "message0": "инициализация шины I2C %1 I2C порт %2",
@@ -406,7 +394,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_declaration
   *
   */
-
 {
   "type": "common_sensor_declaration",
   "message0": "инициализация датчиков %1 переменная шины i2c %2",
@@ -430,7 +417,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_declaration_extended
   *
   */
-
 {
   "type": "common_sensor_declaration_extended",
   "message0": "инициализация датчиков %1 переменная шины i2c %2 %3 адрес устройства i2c %4",
@@ -461,7 +447,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_temperature
   *
   */
-
 {
   "type": "common_sensor_temperature",
   "message0": "датчик температуры %1 переменная датчика %2",
@@ -485,7 +470,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_acceleration
   *
   */
-
 {
   "type": "common_sensor_acceleration",
   "message0": "датчик ускорения %1 переменная датчика %2",
@@ -509,7 +493,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_magnetometer
   *
   */
-
 {
   "type": "common_sensor_magnetometer",
   "message0": "магнитометр %1 переменная датчика %2",
@@ -533,7 +516,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_gyro
   *
   */
-
 {
   "type": "common_sensor_gyro",
   "message0": "гироскоп %1 переменная датчика %2",
@@ -557,7 +539,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_euler
   *
   */
-
 {
   "type": "common_sensor_euler",
   "message0": "датчик угла Эйлера %1 переменная датчика %2",
@@ -581,7 +562,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_quaternion
   *
   */
-
 {
   "type": "common_sensor_quaternion",
   "message0": "кватернион %1 переменная датчика %2",
@@ -605,7 +585,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_linear_acceleration
   *
   */
-
 {
   "type": "common_sensor_linear_acceleration",
   "message0": "линейное ускорение %1 переменная датчика %2",
@@ -629,7 +608,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_euler
   *
   */
-
 {
 
   "type": "common_sensor_euler",
@@ -654,7 +632,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_quaternion
   *
   */
-
 {
   "type": "common_sensor_quaternion",
   "message0": "кватернион %1 переменная датчика %2",
@@ -678,7 +655,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_linear_acceleration
   *
   */
-
 {
   "type": "common_sensor_linear_acceleration",
   "message0": "линейное ускорение %1 переменная датчика %2",
@@ -703,7 +679,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_sensor_gravity
   *
   */
-
 {
   "type": "common_sensor_gravity",
   "message0": "гравитация %1 переменная датчика %2",
@@ -727,7 +702,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_major_chord
   *
   */
-
 {
   "type": "common_music_major_chord",
   "message0": "Мажорный аккорд %1 %2",
@@ -801,7 +775,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_minor_chord
   *
   */
-
 {
   "type": "common_music_minor_chord",
   "message0": "Минорный аккорд %1 %2",
@@ -875,7 +848,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_minor_major_seventh_chord
   *
   */
-
 {
   "type": "common_music_minor_major_seventh_chords",
   "message0": "Малый мажорный септаккорд %1 %2",
@@ -949,7 +921,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_minor_minor_seventh_chords
   *
   */
-
 {
   "type": "common_music_minor_minor_seventh_chords",
   "message0": "Малый минорный септаккорд %1 %2",
@@ -1023,7 +994,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_major_chord_extended
   *
   */
-
 {
   "type": "common_music_major_chord_extended",
   "message0": "Мажорный аккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
@@ -1109,7 +1079,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_minor_chord_extended
   *
   */
-
 {
   "type": "common_music_minor_chord_extended",
   "message0": "Минорный аккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
@@ -1195,7 +1164,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_minor_major_seventh_chords_extended
   *
   */
-
 {
   "type": "common_music_minor_major_seventh_chords_extended",
   "message0": "Малый мажорный септаккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
@@ -1281,7 +1249,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_minor_minor_seventh_chords_extended
   *
   */
-
 {
   "type": "common_music_minor_minor_seventh_chords_extended",
   "message0": "Малый минорный септаккорд %1 %2 major_third %3 perfect_fifth %4 major_seventh %5",
@@ -1367,8 +1334,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_note
   *
   */
-
-
 {
   "type": "common_music_note",
   "lastDummyAlign0": "RIGHT",
@@ -1539,7 +1504,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_note_extended
   *
   */
-
 {
   "type": "common_music_note_extended",
   "lastDummyAlign0": "RIGHT",
@@ -1734,7 +1698,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_classic_note
   *
   */
-
 {
   "type": "common_music_classic_note",
   "lastDummyAlign0": "RIGHT",
@@ -1797,7 +1760,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_classic_note_extended
   *
   */
-
 {
   "type": "common_music_classic_note_extended",
   "lastDummyAlign0": "RIGHT",
@@ -1884,7 +1846,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_mixer_get_bussy
   *
   */
-
 {
   "type": "common_music_mixer_get_bussy",
   "message0": "получить состояние микшера",
@@ -1899,7 +1860,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_function_create_chord
   *
   */
-
 {
   "type": "common_music_function_create_chord",
   "message0": "создать аккорд %1",
@@ -1921,7 +1881,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_function_create_instrument
   *
   */
-
 {
   "type": "common_music_function_create_instrument",
   "message0": "создать инструмент %1 %2",
@@ -1945,7 +1904,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_function_play
   *
   */
-
 {
   "type": "common_music_function_play",
   "message0": "проиграть %1 мелодия %2 удары в минуту %3 инструмент %4",
@@ -1978,7 +1936,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_spes_symbols_with_numeric
   *
   */
-
 {
   "type": "common_music_spes_symbols_with_numeric",
   "message0": "спецсимвол %1 %2 значение %3",
@@ -2053,7 +2010,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_music_fraction
   *
   */
-
 {
   "type": "common_music_fraction",
   "message0": "%1 / %2",
@@ -2086,7 +2042,6 @@ Blockly.defineBlocksWithJsonArray([
   * common_comment
   *
   */
-
 {
   "type": "common_comment",
   "message0": "коментарий %1",
@@ -2102,6 +2057,222 @@ Blockly.defineBlocksWithJsonArray([
   "nextStatement": null,
   "colour": 230,
   "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_say_native
+  *
+  */
+{
+  "type": "common_say_native",
+  "message0": "сказать %1 %2",
+  "args0": [
+    {
+      "type": "field_label_serializable",
+      "name": "text",
+      "text": "текст"
+    },
+    {
+      "type": "input_value",
+      "name": "text",
+      "check": "String"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "Вызов процедуры говорящей голосом по умолчанию",
+  "helpUrl": ""
+},
+
+/**
+  * common_say_native_procedure
+  *
+  */
+{
+  "type": "common_say_native_procedure",
+  "message0": "процедура сказать %1 %2 %3",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_label_serializable",
+      "name": "text",
+      "text": "текст"
+    },
+    {
+      "type": "input_value",
+      "name": "text",
+      "check": "String"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_say_voices_list
+  *
+  */
+{
+  "type": "common_say_voices_list",
+  "message0": "голосовой профиль %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "voice_profile",
+      "options": [
+        [
+          "alan",
+          "alan"
+        ],
+        [
+          "aleksandr",
+          "aleksandr"
+        ],
+        [
+          "alexandr-hq",
+          "alexandr-hq"
+        ],
+        [
+          "anatol",
+          "anatol"
+        ],
+        [
+          "anna",
+          "anna"
+        ],
+        [
+          "arina",
+          "arina"
+        ],
+        [
+          "artemiy",
+          "artemiy"
+        ],
+        [
+          "azamat",
+          "azamat"
+        ],
+        [
+          "bdl",
+          "bdl"
+        ],
+        [
+          "clb",
+          "clb"
+        ],
+        [
+          "elena",
+          "elena"
+        ],
+        [
+          "evgeniy-rus",
+          "evgeniy-rus"
+        ],
+        [
+          "hana",
+          "hana"
+        ],
+        [
+          "irina",
+          "irina"
+        ],
+        [
+          "kiko",
+          "kiko"
+        ],
+        [
+          "Leticia-F123",
+          "Leticia-F123"
+        ],
+        [
+          "lubov",
+          "lubov"
+        ],
+        [
+          "marianna",
+          "marianna"
+        ],
+        [
+          "mikhail",
+          "mikhail"
+        ],
+        [
+          "natalia",
+          "natalia"
+        ],
+        [
+          "natan",
+          "natan"
+        ],
+        [
+          "nazgul",
+          "nazgul"
+        ],
+        [
+          "pavel",
+          "pavel"
+        ],
+        [
+          "slt",
+          "slt"
+        ],
+        [
+          "spomenka",
+          "spomenka"
+        ],
+        [
+          "suze",
+          "suze"
+        ],
+        [
+          "talgat",
+          "talgat"
+        ],
+        [
+          "tatiana",
+          "tatiana"
+        ],
+        [
+          "victoria",
+          "victoria"
+        ],
+        [
+          "vitaliy",
+          "vitaliy"
+        ],
+        [
+          "volodymyr",
+          "volodymyr"
+        ],
+        [
+          "yuriy",
+          "yuriy"
+        ],
+        [
+          "option",
+          "OPTIONNAME"
+        ],
+        [
+          "option",
+          "OPTIONNAME"
+        ],
+        [
+          "option",
+          "OPTIONNAME"
+        ]
+      ]
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "Список голосов установленных в системе. Путь /usr/local/share/RHVoice",
   "helpUrl": ""
 }
 ]);
