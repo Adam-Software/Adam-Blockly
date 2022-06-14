@@ -168,6 +168,150 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * common_app_rhvoice_with_variable
+  *
+  */
+{
+  "type": "common_app_rhvoice_with_variable",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "RHVoice  %1 voice profile %2 %3 rate %4 %5 pitch %6 %7 volume %8 %9 quality %10",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "CENTRE"
+    },
+    {
+      "type": "field_variable",
+      "name": "voice_profile",
+      "variable": "voice_profile"
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "rate",
+      "variable": "rate"
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "pitch",
+      "variable": "pitch"
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "volume",
+      "variable": "volume"
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "quality",
+      "variable": "quality"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "RHVoice бесплатный синтезатор речи с открытым исходным кодом.",
+  "helpUrl": "https://github.com/RHVoice/RHVoice"
+},
+
+/**
+  * common_app_rhvoice_with_variable_and_ch
+  *
+  */
+{
+  "type": "common_app_rhvoice_with_variable_and_ch",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "RHVoice  %1 voice profile %2 %3 rate %4 %5 %6 pitch %7 %8 %9 volume %10 %11 %12 quality %13 %14",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "CENTRE"
+    },
+    {
+      "type": "field_variable",
+      "name": "voice_profile",
+      "variable": "voice_profile"
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "rate",
+      "variable": "rate"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "rate_ch",
+      "checked": false
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "pitch",
+      "variable": "pitch"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "pitch_ch",
+      "checked": false
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "volume",
+      "variable": "volume"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "volume_ch",
+      "checked": false
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_variable",
+      "name": "quality",
+      "variable": "quality"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "quality_ch",
+      "checked": false
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "RHVoice бесплатный синтезатор речи с открытым исходным кодом.",
+  "helpUrl": "https://github.com/RHVoice/RHVoice"
+},
+
+/**
   * common_system_pipeline
   *
   */

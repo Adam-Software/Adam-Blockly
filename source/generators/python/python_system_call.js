@@ -77,6 +77,63 @@ Blockly.Python['common_app_rhvoice'] = function(block) {
 };
 
 /**
+  * common_app_rhvoice_with_variable
+  *
+  */
+Blockly.Python['common_app_rhvoice_with_variable'] = function(block) {
+  var variable_voice_profile = Blockly.Python.nameDB_.getName(block.getFieldValue('voice_profile'), Blockly.Variables.NAME_TYPE);
+  var variable_rate = Blockly.Python.nameDB_.getName(block.getFieldValue('rate'), Blockly.Variables.NAME_TYPE);
+  var variable_pitch = Blockly.Python.nameDB_.getName(block.getFieldValue('pitch'), Blockly.Variables.NAME_TYPE);
+  var variable_volume = Blockly.Python.nameDB_.getName(block.getFieldValue('volume'), Blockly.Variables.NAME_TYPE);
+  var variable_quality = Blockly.Python.nameDB_.getName(block.getFieldValue('quality'), Blockly.Variables.NAME_TYPE);
+  var code = String.format('RHVoice-test --profile {{0}} --rate {{1}} --pitch {{2}} --volume {{3}} --quality {{4}} ', variable_voice_profile, variable_rate, variable_pitch, variable_volume, variable_quality);
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_app_rhvoice_with_variable_and_ch
+  *
+  */
+Blockly.Python['common_app_rhvoice_with_variable_and_ch'] = function(block) {
+  var variable_voice_profile = Blockly.Python.nameDB_.getName(block.getFieldValue('voice_profile'), Blockly.Variables.NAME_TYPE);
+  
+  var variable_rate = Blockly.Python.nameDB_.getName(block.getFieldValue('rate'), Blockly.Variables.NAME_TYPE);
+  var checkbox_rate_ch = block.getFieldValue('rate_ch') == 'TRUE';
+  
+  var variable_pitch = Blockly.Python.nameDB_.getName(block.getFieldValue('pitch'), Blockly.Variables.NAME_TYPE);
+  var checkbox_pitch_ch = block.getFieldValue('pitch_ch') == 'TRUE';
+  
+  var variable_volume = Blockly.Python.nameDB_.getName(block.getFieldValue('volume'), Blockly.Variables.NAME_TYPE);
+  var checkbox_volume_ch = block.getFieldValue('volume_ch') == 'TRUE';
+  
+  var variable_quality = Blockly.Python.nameDB_.getName(block.getFieldValue('quality'), Blockly.Variables.NAME_TYPE);
+  var checkbox_quality_ch = block.getFieldValue('quality_ch') == 'TRUE';
+  
+  var code1 = String.format('RHVoice-test --profile {{0}}', variable_voice_profile)
+  var code2 = String.format(' --rate {{0}}',  variable_rate);
+  var code3 = String.format(' --pitch {{0}}', variable_pitch);
+  var code4 = String.format(' --volume {{0}}', variable_volume);
+  var code5 = String.format(' --quality {{0}}', variable_quality);
+  
+  var code = code1;
+  
+  if(checkbox_rate_ch)
+	  code = code + code2;
+  
+  if(checkbox_pitch_ch)
+	  code = code + code3;
+  
+  if(checkbox_volume_ch)
+	  code = code + code4
+  
+  if(checkbox_quality_ch)
+	  code = code + code5
+  
+  
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
   * common_system_pipeline
   *
   */

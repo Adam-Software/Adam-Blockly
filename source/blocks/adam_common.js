@@ -2136,8 +2136,8 @@ Blockly.defineBlocksWithJsonArray([
           "aleksandr"
         ],
         [
-          "alexandr-hq",
-          "alexandr-hq"
+          "aleksandr-hq",
+          "aleksandr-hq"
         ],
         [
           "anatol",
@@ -2254,18 +2254,6 @@ Blockly.defineBlocksWithJsonArray([
         [
           "yuriy",
           "yuriy"
-        ],
-        [
-          "option",
-          "OPTIONNAME"
-        ],
-        [
-          "option",
-          "OPTIONNAME"
-        ],
-        [
-          "option",
-          "OPTIONNAME"
         ]
       ]
     }
