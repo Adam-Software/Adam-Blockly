@@ -487,16 +487,6 @@ Blockly.Python['common_music_fraction'] = function(block) {
 };
 
 /**
-  * common_comment
-  *
-  */
-Blockly.Python['common_comment'] = function(block) {
-  var text_comment_value = block.getFieldValue('comment_value');
-  var code = '# ' + text_comment_value + '\n';
-  return code;
-};
-
-/**
   * common_say_native
   *
   */
@@ -526,6 +516,38 @@ Blockly.Python['common_say_voices_list'] = function(block) {
   var dropdown_voice_profile = block.getFieldValue('voice_profile');
   var code = String.format("'{0}'", dropdown_voice_profile);
   return [code, Blockly.Python.ORDER_ATOMIC];;
+};
+
+/**
+  * common_comment
+  *
+  */
+Blockly.Python['common_comment'] = function(block) {
+  var text_comment_value = block.getFieldValue('first_text_value');
+  var code = '# ' + text_comment_value + '\n';
+  return code;
+};
+
+/**
+  * text_with_continuation
+  *
+  */
+Blockly.Python['text_with_continuation'] = function(block) {
+  var text_value = block.getFieldValue('first_text_value');
+  var value_second_value = Blockly.Python.valueToCode(block, 'second_value', Blockly.Python.ORDER_NONE);
+  var code = "'" + text_value + "'" + value_second_value;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * variable_with_continuation
+  *
+  */
+Blockly.Python['variable_with_continuation'] = function(block) {
+  var variable_second_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('second_variable'), Blockly.Variables.NAME_TYPE);
+  var continuation = Blockly.Python.valueToCode(block, 'second_variable_value', Blockly.Python.ORDER_ATOMIC);
+  var code = variable_second_variable + continuation;
+  return [code, Blockly.Python.ORDER_NONE];
 };
 
 if (!String.format) {

@@ -296,3 +296,5 @@ Blockly.Python['text_reverse'] = function(block) {
   return [code, Blockly.Python.ORDER_MEMBER];
 };
 
+
+

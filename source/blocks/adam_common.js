@@ -3,6 +3,8 @@
  * Code generated file you can find in BlocklySource\source\generators.
  * File name with code generator has the same name with this file
  */
+ 
+'use strict';
 
 Blockly.defineBlocksWithJsonArray([
 
@@ -2039,28 +2041,6 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * common_comment
-  *
-  */
-{
-  "type": "common_comment",
-  "message0": "коментарий %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "comment_value",
-      "text": "default"
-    }
-  ],
-  "inputsInline": false,
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
-},
-
-/**
   * common_say_native
   *
   */
@@ -2262,5 +2242,167 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "Список голосов установленных в системе. Путь /usr/local/share/RHVoice",
   "helpUrl": ""
-}
+},
+
+/**
+  * common_comment
+  *
+  */
+{
+  "type": "common_comment",
+  "message0": "коментарий %1",
+  "args0": [
+	{
+	  "type": "field_input",
+	  "name": "first_text_value",
+	  "text": ""
+	}
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "style": "text_blocks",
+  "tooltip": "",
+  "helpUrl": "",
+    "extensions": [
+    "text_quotes2"
+  ]
+},
+
+/**
+  * text_with_continuation
+  *
+  */
+{
+  "type": "text_with_continuation",
+  "message0": "%1 %2",
+  "args0": [
+	{
+	  "type": "field_input",
+	  "name": "first_text_value",
+	  "text": ""
+	},
+	{
+	  "type": "input_value",
+	  "name": "second_value"
+	}
+  ],
+  "inputsInline": false,
+  "output": "String",
+  "style": "text_blocks",
+  "tooltip": "",
+  "helpUrl": "",
+  "extensions": [
+    "text_quotes2"
+  ]
+},
+{
+  "type": "variable_with_continuation",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_variable",
+      "name": "second_variable",
+      "variable": "item"
+    },
+    {
+      "type": "input_value",
+      "name": "second_variable_value"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+} 
 ]);
+
+/**
+ *
+ * @mixin
+ * @package
+ * @readonly
+ */
+Blockly.Constants.Text.QUOTE_IMAGE_MIXIN = {
+  /**
+   * Image data URI of an LTR opening double quote (same as RTL closing double quote).
+   * @readonly
+   */
+  QUOTE_IMAGE_LEFT_DATAURI:
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAA' +
+    'n0lEQVQI1z3OMa5BURSF4f/cQhAKjUQhuQmFNwGJEUi0RKN5rU7FHKhpjEH3TEMtkdBSCY' +
+    '1EIv8r7nFX9e29V7EBAOvu7RPjwmWGH/VuF8CyN9/OAdvqIXYLvtRaNjx9mMTDyo+NjAN1' +
+    'HNcl9ZQ5oQMM3dgDUqDo1l8DzvwmtZN7mnD+PkmLa+4mhrxVA9fRowBWmVBhFy5gYEjKMf' +
+    'z9AylsaRRgGzvZAAAAAElFTkSuQmCC',
+  /**
+   * Image data URI of an LTR closing double quote (same as RTL opening double quote).
+   * @readonly
+   */
+  QUOTE_IMAGE_RIGHT_DATAURI:
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAKCAQAAAAqJXdxAAAA' +
+    'qUlEQVQI1z3KvUpCcRiA8ef9E4JNHhI0aFEacm1o0BsI0Slx8wa8gLauoDnoBhq7DcfWhg' +
+    'gONDmJJgqCPA7neJ7p934EOOKOnM8Q7PDElo/4x4lFb2DmuUjcUzS3URnGib9qaPNbuXvB' +
+    'O3sGPHJDRG6fGVdMSeWDP2q99FQdFrz26Gu5Tq7dFMzUvbXy8KXeAj57cOklgA+u1B5Aos' +
+    'lLtGIHQMaCVnwDnADZIFIrXsoXrgAAAABJRU5ErkJggg==',
+  /**
+   * Pixel width of QUOTE_IMAGE_LEFT_DATAURI and QUOTE_IMAGE_RIGHT_DATAURI.
+   * @readonly
+   */
+  QUOTE_IMAGE_WIDTH: 12,
+  /**
+   * Pixel height of QUOTE_IMAGE_LEFT_DATAURI and QUOTE_IMAGE_RIGHT_DATAURI.
+   * @readonly
+   */
+  QUOTE_IMAGE_HEIGHT: 12,
+
+  /**
+   * Inserts appropriate quote images before and after the named field.
+   * @param {string} fieldName The name of the field to wrap with quotes.
+   * @this {Blockly.Block}
+   */
+  quoteField_: function(fieldName) {
+    for (var i = 0, input; (input = this.inputList[i]); i++) {
+      for (var j = 0, field; (field = input.fieldRow[j]); j++) {
+        if (fieldName == field.name) {
+          input.insertFieldAt(j, this.newQuote_(true));
+          input.insertFieldAt(j + 2, this.newQuote_(false));
+          return;
+        }
+      }
+    }
+    console.warn('field named "' + fieldName + '" not found in ' + this.toDevString());
+  },
+
+  /**
+   * A helper function that generates a FieldImage of an opening or
+   * closing double quote. The selected quote will be adapted for RTL blocks.
+   * @param {boolean} open If the image should be open quote (“ in LTR).
+   *                       Otherwise, a closing quote is used (” in LTR).
+   * @return {!Blockly.FieldImage} The new field.
+   * @this {Blockly.Block}
+   */
+  newQuote_: function(open) {
+    var isLeft = this.RTL ? !open : open;
+    var dataUri = isLeft ?
+      this.QUOTE_IMAGE_LEFT_DATAURI :
+      this.QUOTE_IMAGE_RIGHT_DATAURI;
+    return new Blockly.FieldImage(
+        dataUri,
+        this.QUOTE_IMAGE_WIDTH,
+        this.QUOTE_IMAGE_HEIGHT,
+        isLeft ? '\u201C' : '\u201D');
+  }
+};
+
+/**
+ * Wraps TEXT field with images of double quote characters.
+ * @this {Blockly.Block}
+ */
+Blockly.Constants.Text.TEXT_QUOTES_EXTENSION = function() {
+  this.mixin(Blockly.Constants.Text.QUOTE_IMAGE_MIXIN);
+  this.quoteField_('first_text_value');
+};
+
+Blockly.Extensions.register('text_quotes2',
+    Blockly.Constants.Text.TEXT_QUOTES_EXTENSION);

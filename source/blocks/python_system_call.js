@@ -55,32 +55,6 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * common_app_echo_with_text_param_variable
-  *
-  */
-{
-  "type": "common_app_echo_with_text_param_variable",
-  "message0": "echo %1 %2",
-  "args0": [
-    {
-      "type": "field_variable",
-      "name": "text",
-      "variable": "text"
-    },
-    {
-      "type": "input_value",
-      "name": "input_string",
-      "check": "String"
-    }
-  ],
-  "inputsInline": false,
-  "output": null,
-  "colour": 230,
-  "tooltip": "echo sh",
-  "helpUrl": ""
-},
-
-/**
   * common_app_echo
   *
   */
@@ -133,27 +107,52 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "common_app_rhvoice",
-  "message0": "RHVoice  %1 voice profile %2 rate %3 pitch %4 volume %5 quality %6",
+  "message0": "RHVoice  %1 %2 voice profile %3 %4 rate %5 %6 pitch %7 %8 volume %9 %10 quality %11",
   "args0": [
     {
       "type": "input_dummy",
       "align": "CENTRE"
     },
     {
-      "type": "input_value",
-      "name": "voice profile"
+      "type": "field_checkbox",
+      "name": "voice_profile_ch",
+      "checked": true
     },
     {
       "type": "input_value",
-      "name": "rate"
+      "name": "voice_profile"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "rate_ch",
+      "checked": false
+    },
+    {
+      "type": "input_value",
+      "name": "rate",
+    },
+    {
+      "type": "field_checkbox",
+      "name": "pitch_ch",
+      "checked": false
     },
     {
       "type": "input_value",
       "name": "pitch"
     },
     {
+      "type": "field_checkbox",
+      "name": "volume_ch",
+      "checked": false
+    },
+    {
       "type": "input_value",
       "name": "volume"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "quality_ch",
+      "checked": false
     },
     {
       "type": "input_value",
@@ -332,6 +331,106 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * common_system_literal
+  *
+  */
+{
+  "type": "common_system_literal",
+  "message0": "f %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "second_value"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "formatted string",
+  "helpUrl": "https://shultais.education/blog/python-f-strings"
+},
+
+/**
+  * common_system_left_curly_brace
+  *
+  */
+{
+  "type": "common_system_left_curly_brace",
+  "message0": "{ %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "second_value"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_system_redirect_input
+  *
+  */
+{
+  "type": "common_system_redirect_input",
+  "message0": "< %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "second_value"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_system_redirect_output
+  *
+  */
+{
+  "type": "common_system_redirect_output",
+  "message0": "> %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "second_value"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_system_right_curly_brace
+  *
+  */
+{
+  "type": "common_system_right_curly_brace",
+  "message0": "} %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "second_value"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
   * common_system_i2cdetect
   *
   */
@@ -370,6 +469,26 @@ Blockly.defineBlocksWithJsonArray([
   "output": null,
   "colour": 230,
   "tooltip": "i2cdetect is a userspace program to scan an I2C bus for devices",
+  "helpUrl": ""
+},
+
+/**
+  * common_system_whitespace
+  *
+  */
+{
+  "type": "common_system_whitespace",
+  "message0": "пробел %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "second_value"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
   "helpUrl": ""
 }
 ])
