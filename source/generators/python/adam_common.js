@@ -550,6 +550,18 @@ Blockly.Python['variable_with_continuation'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+/**
+  * common_say_save_file_dp
+  *
+  */
+Blockly.Python['common_say_save_file_dp'] = function(block) {
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_NONE);
+  var dropdown_extension = block.getFieldValue('extension');
+  var cleanText = value_text.replaceAll("'", "")
+  var code = String.format("'{0}{1}'", cleanText, dropdown_extension);
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
 if (!String.format) {
   String.format = function(format) {
     var args = Array.prototype.slice.call(arguments, 1);

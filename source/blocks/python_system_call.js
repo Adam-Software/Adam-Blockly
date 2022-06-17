@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Common blocks for python system calls
  * Code generated file you can find in BlocklySource\source\generators.
  * File name with code generator has the same name with this file
@@ -107,7 +107,7 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "common_app_rhvoice",
-  "message0": "RHVoice  %1 %2 voice profile %3 %4 rate %5 %6 pitch %7 %8 volume %9 %10 quality %11",
+  "message0": "RHVoice  %1 %2 voice profile %3 %4 rate %5 %6 pitch %7 %8 volume %9 %10 quality %11 %12 input file %13 %14 to file name %15 ssml enable %16",
   "args0": [
     {
       "type": "input_dummy",
@@ -129,7 +129,7 @@ Blockly.defineBlocksWithJsonArray([
     },
     {
       "type": "input_value",
-      "name": "rate",
+      "name": "rate"
     },
     {
       "type": "field_checkbox",
@@ -157,6 +157,28 @@ Blockly.defineBlocksWithJsonArray([
     {
       "type": "input_value",
       "name": "quality"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "input_file_ch",
+      "checked": false
+    },
+    {
+      "type": "input_value",
+      "name": "input_file_name"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "to_file_ch",
+      "checked": false
+    },
+    {
+      "type": "input_value",
+      "name": "to_file_name"
+    },
+    {
+      "type": "input_value",
+      "name": "is_ssml"
     }
   ],
   "inputsInline": false,
@@ -166,149 +188,6 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": "https://github.com/RHVoice/RHVoice"
 },
 
-/**
-  * common_app_rhvoice_with_variable
-  *
-  */
-{
-  "type": "common_app_rhvoice_with_variable",
-  "lastDummyAlign0": "RIGHT",
-  "message0": "RHVoice  %1 voice profile %2 %3 rate %4 %5 pitch %6 %7 volume %8 %9 quality %10",
-  "args0": [
-    {
-      "type": "input_dummy",
-      "align": "CENTRE"
-    },
-    {
-      "type": "field_variable",
-      "name": "voice_profile",
-      "variable": "voice_profile"
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "rate",
-      "variable": "rate"
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "pitch",
-      "variable": "pitch"
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "volume",
-      "variable": "volume"
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "quality",
-      "variable": "quality"
-    }
-  ],
-  "inputsInline": false,
-  "output": null,
-  "colour": 230,
-  "tooltip": "RHVoice бесплатный синтезатор речи с открытым исходным кодом.",
-  "helpUrl": "https://github.com/RHVoice/RHVoice"
-},
-
-/**
-  * common_app_rhvoice_with_variable_and_ch
-  *
-  */
-{
-  "type": "common_app_rhvoice_with_variable_and_ch",
-  "lastDummyAlign0": "RIGHT",
-  "message0": "RHVoice  %1 voice profile %2 %3 rate %4 %5 %6 pitch %7 %8 %9 volume %10 %11 %12 quality %13 %14",
-  "args0": [
-    {
-      "type": "input_dummy",
-      "align": "CENTRE"
-    },
-    {
-      "type": "field_variable",
-      "name": "voice_profile",
-      "variable": "voice_profile"
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "rate",
-      "variable": "rate"
-    },
-    {
-      "type": "field_checkbox",
-      "name": "rate_ch",
-      "checked": false
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "pitch",
-      "variable": "pitch"
-    },
-    {
-      "type": "field_checkbox",
-      "name": "pitch_ch",
-      "checked": false
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "volume",
-      "variable": "volume"
-    },
-    {
-      "type": "field_checkbox",
-      "name": "volume_ch",
-      "checked": false
-    },
-    {
-      "type": "input_dummy",
-      "align": "RIGHT"
-    },
-    {
-      "type": "field_variable",
-      "name": "quality",
-      "variable": "quality"
-    },
-    {
-      "type": "field_checkbox",
-      "name": "quality_ch",
-      "checked": false
-    }
-  ],
-  "inputsInline": false,
-  "output": null,
-  "colour": 230,
-  "tooltip": "RHVoice бесплатный синтезатор речи с открытым исходным кодом.",
-  "helpUrl": "https://github.com/RHVoice/RHVoice"
-},
 
 /**
   * common_system_pipeline
@@ -490,6 +369,105 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
+},
+
+/**
+  * common_system_single_quotation
+  *
+  */
+{
+  "type": "common_system_single_quotation",
+  "message0": "to string with single quote %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "input_string"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_system_double_quotation
+  *
+  */
+{
+  "type": "common_system_double_quotation",
+  "message0": "to string with double quote %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "input_string"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_system_one_single_quotation
+  *
+  */
+{
+  "type": "common_system_one_single_quotation",
+  "message0": "quote %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "input_string"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_say_save_file_dp
+  *
+  */
+{
+  "type": "common_say_save_file_dp",
+  "message0": "file name %1 with_extension %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "text"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "extension",
+      "options": [
+        [
+          ".mp3",
+          ".mp3"
+        ],
+        [
+          ".wav",
+          ".wav"
+        ],
+        [
+          ".ssml",
+          ".ssml"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }
+
 ])
 
