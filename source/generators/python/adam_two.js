@@ -344,6 +344,10 @@ Blockly.Python['wheels_right_leg_extended'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+/**
+ * wheels_left_rangefinder
+ *
+ */
 Blockly.Python['wheels_left_rangefinder'] = function(block) {
   var variable_imu = Blockly.Python.nameDB_.getName(block.getFieldValue('imu'), Blockly.Variables.NAME_TYPE);
   
@@ -352,10 +356,109 @@ Blockly.Python['wheels_left_rangefinder'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
+/**
+ * wheels_right_rangefinder
+ *
+ */
 Blockly.Python['wheels_right_rangefinder'] = function(block) {
   var variable_imu = Blockly.Python.nameDB_.getName(block.getFieldValue('imu'), Blockly.Variables.NAME_TYPE);
   
   var code = variable_imu + '.motor(0 , 0, 103, 255)';
   
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * servo_common_function
+ *
+ */
+Blockly.Python['servo_common_function'] = function(block) {
+  var variable_imu = Blockly.Python.nameDB_.getName(block.getFieldValue('imu'), Blockly.Variables.NAME_TYPE);
+  var value_params_list = Blockly.Python.valueToCode(block, 'params_list', Blockly.Python.ORDER_ATOMIC);
+ var code = variable_imu + '.nodeMultiServoWrite(' + value_params_list + ')\n';
+  return code;
+}; 
+
+/**
+ * servo_fingers_param_func
+ *
+ */
+Blockly.Python['servo_fingers_param_func'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
+  var value_angle_left_fingers = Blockly.Python.valueToCode(block, 'angle_left_fingers', Blockly.Python.ORDER_ATOMIC);
+  var value_angle_right_fingers = Blockly.Python.valueToCode(block, 'angle_right_fingers', Blockly.Python.ORDER_ATOMIC);
+  var code = '("Hands", ' + value_speed + ', ' + value_angle_left_fingers + ', ' + value_angle_right_fingers +  ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * servo_head_param_func
+ *
+ */
+Blockly.Python['servo_head_param_func'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
+  var value_head_angle = Blockly.Python.valueToCode(block, 'head_angle', Blockly.Python.ORDER_ATOMIC);
+  var value_neck_angle = Blockly.Python.valueToCode(block, 'neck_angle', Blockly.Python.ORDER_ATOMIC);
+  var code = '("Head", ' + value_speed + ', ' + value_head_angle + ', ' + value_neck_angle + ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * servo_right_hand_short_param_func
+ *
+ */
+Blockly.Python['servo_right_hand_short_param_func'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
+  var value_shoulder_angle = Blockly.Python.valueToCode(block, 'shoulder_angle', Blockly.Python.ORDER_ATOMIC);
+  var value_forearm_angle = Blockly.Python.valueToCode(block, 'forearm_angle', Blockly.Python.ORDER_ATOMIC);
+  var value_elbow_angle = Blockly.Python.valueToCode(block, 'upper_elbow_angle', Blockly.Python.ORDER_ATOMIC);
+  var code = '("ArmR", ' + value_speed + ', ' + value_shoulder_angle + ', ' + value_forearm_angle + ', ' + value_elbow_angle + ', ' + value_elbow_angle + ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+
+/**
+ * servo_left_hand_short_param_func
+ *
+ */
+Blockly.Python['servo_left_hand_short_param_func'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
+  var value_shoulder_angle = Blockly.Python.valueToCode(block, 'shoulder_angle', Blockly.Python.ORDER_ATOMIC);
+  var value_forearm_angle = Blockly.Python.valueToCode(block, 'forearm_angle', Blockly.Python.ORDER_ATOMIC);
+  var value_elbow_angle = Blockly.Python.valueToCode(block, 'elbow_angle', Blockly.Python.ORDER_ATOMIC);py
+  var code = '("ArmL", ' + value_speed + ', ' + value_shoulder_angle + ', ' + value_forearm_angle + ', ' + value_elbow_angle + ', ' + value_elbow_angle + ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * servo_torso_param_func
+ *
+ */
+Blockly.Python['servo_torso_param_func'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
+  var value_torso_angle = Blockly.Python.valueToCode(block, 'torso_angle', Blockly.Python.ORDER_ATOMIC);
+  var code = '("Chest", ' + value_speed + ', ' + value_torso_angle + ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * servo_press_short_param_func
+ *
+ */
+Blockly.Python['servo_press_short_param_func'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
+  var value_tilt_press = Blockly.Python.valueToCode(block, 'tilt_press', Blockly.Python.ORDER_ATOMIC);
+  var code = '("Loin", ' + value_speed + ', ' + value_tilt_press + ', 0)';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * servo_legs_param_func
+ *
+ */
+Blockly.Python['servo_legs_param_func'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_ATOMIC);
+  var value_leg_lift_angle = Blockly.Python.valueToCode(block, 'leg lift angle', Blockly.Python.ORDER_ATOMIC);
+  var code = '("Pivas", ' + value_speed + ', ' + value_leg_lift_angle + ')';
   return [code, Blockly.Python.ORDER_NONE];
 };

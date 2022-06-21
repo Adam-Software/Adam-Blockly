@@ -927,5 +927,269 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "Получение данных с дальномера расположенных на правой ноге",
   "helpUrl": ""
+},
+
+/**
+ * servo_common_function
+ * 
+ */
+{
+  "type": "servo_common_function",
+  "message0": "Общая процедура %1 переменная AdamIMU %2 %3 список параметров %4",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "CENTRE"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "params_list",
+      "check": "Array"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 50,
+  "tooltip": "Процедура позволяющая вызывать несколько сервоприводов одновременно",
+  "helpUrl": ""
+},
+
+/**
+ * servo_fingers_param_func
+ * 
+ */
+{
+  "type": "servo_fingers_param_func",
+  "message0": "пальцы рук %1 скорость %2 угол пальцев левой руки %3 угол пальцев правой руки %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "angle_left_fingers",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "angle_right_fingers",
+      "check": "Number"
+    }
+  ],
+  "output": null,
+  "colour": 50,
+  "tooltip": "Управления пальцами рук",
+  "helpUrl": ""
+},
+
+/**
+ * servo_head_param_func
+ * 
+ */
+{
+  "type": "servo_head_param_func",
+  "message0": "голова  %1 скорость %2 угол головы %3 угол шеи %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "head_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "neck_angle",
+      "check": "Number"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "Управление наклоном головы и шеи",
+  "helpUrl": ""
+},
+
+/**
+ * servo_right_hand_short_param_func
+ * 
+ */
+{
+  "type": "servo_right_hand_short_param_func",
+  "message0": "правая рука %1 скорость %2 угол плеча %3 угол предплечья %4 угол локтя %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "shoulder_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "forearm_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "upper_elbow_angle",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 270,
+  "tooltip": "Управление правой рукой",
+  "helpUrl": ""
+},
+
+/**
+ * servo_left_hand_short_param_func
+ * 
+ */
+{
+  "type": "servo_left_hand_short_param_func",
+  "message0": "левая рука %1 скорость %2 угол плеча %3 угол предплечья %4 угол локтя %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "shoulder_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "forearm_angle",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "elbow_angle",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 270,
+  "tooltip": "Управление левой рукой",
+  "helpUrl": ""
+},
+
+/**
+ * servo_torso_param_func
+ * 
+ */
+{
+  "type": "servo_torso_param_func",
+  "message0": "туловище %1 скорость %2 угол наклона %3",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "torso_angle",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 140,
+  "tooltip": "Управление туловищем",
+  "helpUrl": ""
+},
+
+/**
+ * servo_press_short_param_func
+ * 
+ */
+{
+  "type": "servo_press_short_param_func",
+  "message0": "пресс %1 скорость %2 угол наклона пресса %3",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "tilt_press",
+      "check": "Number"
+    }
+  ],
+  "output": null,
+  "colour": 100,
+  "tooltip": "Управление прессом",
+  "helpUrl": ""
+},
+
+/**
+ * servo_legs_param_func
+ * 
+ */
+{
+  "type": "servo_legs_param_func",
+  "message0": "ноги %1 скорость %2 угол наклона %3",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "leg lift angle",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Управление ногами",
+  "helpUrl": ""
 }
+
 ]);

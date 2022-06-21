@@ -107,7 +107,7 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "common_app_rhvoice",
-  "message0": "RHVoice  %1 %2 voice profile %3 %4 rate %5 %6 pitch %7 %8 volume %9 %10 quality %11 %12 input file %13 %14 to file name %15 ssml enable %16",
+  "message0": "RHVoice  %1 %2 voice profile %3 %4 rate %5 %6 pitch %7 %8 volume %9 %10 quality %11 %12 input file %13 %14 to file name %15 %16 ssml enable",
   "args0": [
     {
       "type": "input_dummy",
@@ -177,8 +177,9 @@ Blockly.defineBlocksWithJsonArray([
       "name": "to_file_name"
     },
     {
-      "type": "input_value",
-      "name": "is_ssml"
+      "type": "field_checkbox",
+      "name": "is_ssml",
+      "checked": false
     }
   ],
   "inputsInline": false,
