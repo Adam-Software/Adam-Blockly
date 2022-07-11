@@ -2046,13 +2046,8 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "common_say_native",
-  "message0": "сказать %1 %2",
+  "message0": "сказать текст %1",
   "args0": [
-    {
-      "type": "field_label_serializable",
-      "name": "text",
-      "text": "текст"
-    },
     {
       "type": "input_value",
       "name": "text",
@@ -2067,31 +2062,28 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * common_say_native_procedure
+  * common_say_native_with_voice_param
   *
   */
 {
-  "type": "common_say_native_procedure",
-  "message0": "процедура сказать %1 %2 %3",
+  "type": "common_say_native_with_voice_param",
+  "message0": "сказать текст %1 голос %2",
   "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "field_label_serializable",
-      "name": "text",
-      "text": "текст"
-    },
     {
       "type": "input_value",
       "name": "text",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "voice",
       "check": "String"
     }
   ],
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,
-  "tooltip": "",
+  "tooltip": "Вызов процедуры говорящей голосом указанным в параметрах",
   "helpUrl": ""
 },
 

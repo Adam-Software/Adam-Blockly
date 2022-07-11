@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy');
+Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os');
 
 /**
   * common_eye_pack
@@ -282,9 +282,7 @@ Blockly.Python['common_music_minor_chord'] = function(block) {
   */
 Blockly.Python['common_music_minor_major_seventh_chords'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-
   var code = '\'' + dropdown_chord + '\'';
-
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -489,24 +487,28 @@ Blockly.Python['common_music_fraction'] = function(block) {
 /**
   * common_say_native
   *
-  */
+  */  
 Blockly.Python['common_say_native'] = function(block) {
+  Blockly.Python.definitions_['import_subprocess'] = 'import subprocess';
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'subprocess.call("echo ' + value_text + ' | RHVoice-test --profile \'aleksandr-hq\'  2>/dev/null", shell=True)';
   return code;
 };
 
 /**
-  * common_say_native_procedure
+  * common_say_native_with_voice_param
   *
   */
-Blockly.Python['common_say_native_procedure'] = function(block) {
+Blockly.Python['common_say_native_with_voice_param'] = function(block) {
+  Blockly.Python.definitions_['import_subprocess'] = 'import subprocess';
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  var value_voice = Blockly.Python.valueToCode(block, 'voice', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'subprocess.call("echo ' + value_text + ' | RHVoice-test --profile ' + value_voice + '  2>/dev/null", shell=True)';
   return code;
 };
+
 
 /**
   * common_say_voices_list

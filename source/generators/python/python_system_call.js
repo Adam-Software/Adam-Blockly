@@ -77,8 +77,6 @@ Blockly.Python['common_app_rhvoice'] = function(block) {
   var value_to_file_name = Blockly.Python.valueToCode(block, 'to_file_name', Blockly.Python.ORDER_NONE);
   
   var checkbox_is_ssml = block.getFieldValue('is_ssml') == 'TRUE';
-  //var value_is_ssml = Blockly.Python.valueToCode(block, 'is_ssml', Blockly.Python.ORDER_NONE);
-  //var value_is_ssml_too = (block.getFieldValue('shell') == 'TRUE') ? 'True' : 'False';
   
   var code0 = String.format('RHVoice-test')
   var code1 = String.format(' --profile {0}', value_voice_profile)
