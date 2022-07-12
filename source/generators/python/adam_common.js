@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os');
+Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os, sh, RHVoice');
 
 /**
   * common_eye_pack
@@ -509,6 +509,28 @@ Blockly.Python['common_say_native_with_voice_param'] = function(block) {
   return code;
 };
 
+/**
+  * common_say_sh
+  *
+  */
+Blockly.Python['common_say_sh'] = function(block) {
+  Blockly.Python.definitions_['from_sh_import_RHVoice'] = 'from sh import RHVoice';
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  var code = 'RHVoice(p=\'Aleksandr-hq\', _in='+ value_text + ')';
+  return code;
+};
+
+/**
+  * common_say_sh_with_voice_param
+  *
+  */
+Blockly.Python['common_say_sh_with_voice_param'] = function(block) {
+  Blockly.Python.definitions_['from_sh_import_RHVoice'] = 'from sh import RHVoice';
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  var value_voice = Blockly.Python.valueToCode(block, 'voice', Blockly.Python.ORDER_ATOMIC);
+  var code = 'RHVoice(p=' + value_voice + ', _in='+ value_text + ')';
+  return code;
+};
 
 /**
   * common_say_voices_list

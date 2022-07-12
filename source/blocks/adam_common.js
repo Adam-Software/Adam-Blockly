@@ -2088,6 +2088,58 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * common_say_sh
+  *
+  */
+{
+  "type": "common_say_sh",
+  "message0": "сказать %1 %2",
+  "args0": [
+    {
+      "type": "field_label_serializable",
+      "name": "text",
+      "text": "текст"
+    },
+    {
+      "type": "input_value",
+      "name": "text",
+      "check": "String"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "Вызов процедуры говорящей голосом по умолчанию",
+  "helpUrl": ""
+},
+
+/**
+  * common_say_sh_with_voice_param
+  *
+  */
+{
+  "type": "common_say_sh_with_voice_param",
+  "message0": "сказать текст %1 голос %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "text",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "voice",
+      "check": "String"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "Вызов процедуры говорящей голосом указанным в параметрах",
+  "helpUrl": ""
+},
+
+/**
   * common_say_voices_list
   *
   */
