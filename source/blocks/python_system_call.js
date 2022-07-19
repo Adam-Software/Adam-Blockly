@@ -76,32 +76,6 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * common_app_echo_with_text_param
-  *
-  */
-{
-  "type": "common_app_echo_with_text_param",
-  "message0": "echo %1 %2",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "input_text",
-      "text": "text"
-    },
-    {
-      "type": "input_value",
-      "name": "input_string",
-      "check": "String"
-    }
-  ],
-  "inputsInline": false,
-  "output": null,
-  "colour": 230,
-  "tooltip": "echo sh",
-  "helpUrl": ""
-},
-
-/**
   * common_app_rhvoice
   *
   */
@@ -189,6 +163,84 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": "https://github.com/RHVoice/RHVoice"
 },
 
+
+/**
+  * common_system_example_flack_app
+  *
+  */
+{
+  "type": "common_system_example_flack_app",
+  "message0": "flack app %1 host ip %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "host"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "Запуск сервера демонстрации возможностей работы с датчиком BNO055",
+  "helpUrl": "https://learn.adafruit.com/bno055-absolute-orientation-sensor-with-raspberry-pi-and-beaglebone-black/webgl-example"
+},
+
+/**
+  * common_system_resources_music
+  *
+  */
+{
+  "type": "common_system_resources_music",
+  "message0": "путь до библиотеки музыки %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "path"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_app_ls_dir
+  *
+  */
+{
+  "type": "common_app_ls_dir",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "lists dirrectrory path %1 long format %2 %3  not ignore . %4",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "path",
+      "check": "String"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "long_format",
+      "checked": true
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "not_ignore_dot",
+      "checked": true
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "In computing, ls is a command to list computer files in Unix and Unix-like operating systems",
+  "helpUrl": "https://en.wikipedia.org/wiki/Ls"
+},
 
 /**
   * common_system_pipeline

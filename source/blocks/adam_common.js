@@ -1844,6 +1844,62 @@ Blockly.defineBlocksWithJsonArray([
   "helpUrl": ""
 },
 
+
+/**
+  * common_music_mixer_init
+  *
+  */
+{
+  "type": "common_music_mixer_init",
+  "message0": "Инициализация микшера",
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "Инициализирует pygame микшер",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_mixer_load
+  *
+  */
+{
+  "type": "common_music_mixer_load",
+  "message0": "Загрузить композицию %1 путь %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "path",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "Загружает композицию",
+  "helpUrl": ""
+},
+
+/**
+  * common_music_mixer_play
+  *
+  */
+{
+  "type": "common_music_mixer_play",
+  "message0": "Проиграть композицию",
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "Проигрывает загруженную композицию",
+  "helpUrl": ""
+},
+
 /**
   * common_music_mixer_get_bussy
   *

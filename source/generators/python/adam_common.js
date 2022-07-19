@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os, sh, RHVoice');
+Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os, sh, RHVoice, pygame');
 
 /**
   * common_eye_pack
@@ -408,10 +408,42 @@ Blockly.Python['common_music_classic_note_extended'] = function(block) {
 };
 
 /**
+  * common_music_mixer_init
+  *
+  */
+Blockly.Python['common_music_mixer_init'] = function(block) {
+  Blockly.Python.definitions_['import_pygame'] = 'import pygame';
+  var code = 'pygame.mixer.init()\n';
+  return code;
+};
+
+/**
+  * common_music_mixer_load
+  *
+  */
+Blockly.Python['common_music_mixer_load'] = function(block) {
+  var value_path = Blockly.Python.valueToCode(block, 'path', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'pygame.mixer.music.load(' + value_path + ')\n';
+  return code;
+}; 
+
+/**
+  * common_music_mixer_play
+  *
+  */
+Blockly.Python['common_music_mixer_play'] = function(block) {
+  Blockly.Python.definitions_['import_pygame'] = 'import pygame';
+  var code = 'pygame.mixer.music.play()\n';
+  return code;
+};
+
+/**
   * common_music_mixer_get_bussy
   *
   */
 Blockly.Python['common_music_mixer_get_bussy'] = function(block) {
+  Blockly.Python.definitions_['import_pygame'] = 'import pygame';
   var code = 'pygame.mixer.music.get_busy()';
   return [code, Blockly.Python.ORDER_NONE];
 };
