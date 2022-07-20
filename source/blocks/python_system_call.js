@@ -76,7 +76,6 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-<<<<<<< HEAD
   * common_app_echo_ext
   *
   */
@@ -155,8 +154,6 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-=======
->>>>>>> c19f7804c8f0bdc33e4c283b474d563a2d8a1746
   * common_app_rhvoice
   *
   */

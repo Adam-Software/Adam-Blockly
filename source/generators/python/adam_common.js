@@ -422,7 +422,7 @@ Blockly.Python['common_music_mixer_init'] = function(block) {
   *
   */
 Blockly.Python['common_music_mixer_load'] = function(block) {
-  var value_path = Blockly.Python.valueToCode(block, 'path', Blockly.Python.ORDER_ATOMIC);
+  var value_path = Blockly.Python.valueToCode(block, 'path', Blockly.Python.ORDER_NONE);
   // TODO: Assemble Python into code variable.
   var code = 'pygame.mixer.music.load(' + value_path + ')\n';
   return code;
