@@ -76,6 +76,58 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
+  * common_app_echo_ext
+  *
+  */
+{
+  "type": "common_app_echo_ext",
+  "message0": "echo %1 %2 2> /dev/null",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "input_string",
+      "check": "String"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "to_null_output",
+      "checked": true
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "echo sh",
+  "helpUrl": ""
+},
+
+/**
+  * common_app_echo_with_text_param
+  *
+  */
+{
+  "type": "common_app_echo_ext",
+  "message0": "echo %1 %2 2> /dev/null",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "input_string",
+      "check": "String"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "to_null_output",
+      "checked": true
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "echo sh",
+  "helpUrl": ""
+},
+
+/**
   * common_app_echo_with_text_param
   *
   */
