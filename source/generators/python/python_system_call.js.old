@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('os, subprocess');
+Blockly.Python.addReservedWords('os, subprocess, sh, ls, app, bno055_webgl.server');
 
 /**
   * systems_os_system
@@ -65,16 +65,6 @@ Blockly.Python['common_app_echo_ext'] = function(block) {
   *
   */
 Blockly.Python['common_app_rhvoice'] = function(block) {
-  var value_voice_profile = Blockly.Python.valueToCode(block, 'voice profile', Blockly.Python.ORDER_ATOMIC);
-  var value_rate = Blockly.Python.valueToCode(block, 'rate', Blockly.Python.ORDER_ATOMIC);
-  var value_pitch = Blockly.Python.valueToCode(block, 'pitch', Blockly.Python.ORDER_ATOMIC);
-  var value_volume = Blockly.Python.valueToCode(block, 'volume', Blockly.Python.ORDER_ATOMIC);
-  var value_quality = Blockly.Python.valueToCode(block, 'quality', Blockly.Python.ORDER_ATOMIC);
-  var code = 'RHVoice-test --profile ' + value_voice_profile + ' --rate ' + value_rate + ' --pitch ' + value_pitch + ' --volume ' + value_volume + ' --quality ' + value_quality;
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-Blockly.Python['common_app_rhvoice'] = function(block) {
   var checkbox_voice_profile_ch = block.getFieldValue('voice_profile_ch') == 'TRUE';
   var value_voice_profile = Blockly.Python.valueToCode(block, 'voice_profile', Blockly.Python.ORDER_ATOMIC);
   
@@ -97,8 +87,6 @@ Blockly.Python['common_app_rhvoice'] = function(block) {
   var value_to_file_name = Blockly.Python.valueToCode(block, 'to_file_name', Blockly.Python.ORDER_NONE);
   
   var checkbox_is_ssml = block.getFieldValue('is_ssml') == 'TRUE';
-  //var value_is_ssml = Blockly.Python.valueToCode(block, 'is_ssml', Blockly.Python.ORDER_NONE);
-  //var value_is_ssml_too = (block.getFieldValue('shell') == 'TRUE') ? 'True' : 'False';
   
   var code0 = String.format('RHVoice-test')
   var code1 = String.format(' --profile {0}', value_voice_profile)
@@ -147,6 +135,63 @@ Blockly.Python['common_app_rhvoice'] = function(block) {
 Blockly.Python['common_system_pipeline'] = function(block) {
   var value_second_value = Blockly.Python.valueToCode(block, 'second_value', Blockly.Python.ORDER_NONE);
   var code = '|' + value_second_value;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_system_example_flack_app
+  * Example for BNO055 
+  *
+  */
+Blockly.Python['common_system_example_flack_app'] = function(block) {
+  Blockly.Python.definitions_['from_bno055_webgl.server_import_app'] = 'from bno055_webgl.server import app';
+  var value_host = Blockly.Python.valueToCode(block, 'host', Blockly.Python.ORDER_NONE);
+  var code = 'app.run(host=' + value_host + ', threaded=True)';
+  return code;
+};
+
+/**
+  * common_system_resources_music
+  *
+  */
+Blockly.Python['common_system_resources_music'] = function(block) {
+  var value_path = Blockly.Python.valueToCode(block, 'path', Blockly.Python.ORDER_NONE);
+  var code = "";
+  
+  if(value_path == '')
+	  code = "'/home/pi/Music'"
+  else
+	  code =  String.format("'/home/pi/Music/{0}'",  value_path.replaceAll("'", ""))
+  
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_app_ls_dir
+  *
+  */
+Blockly.Python['common_app_ls_dir'] = function(block) {
+  Blockly.Python.definitions_['from_sh_import_ls'] = 'from sh import ls';
+  var value_path = Blockly.Python.valueToCode(block, 'path', Blockly.Python.ORDER_NONE);
+  var checkbox_long_format = block.getFieldValue('long_format') == 'TRUE';
+  var checkbox_not_ignore_dot = block.getFieldValue('not_ignore_dot') == 'TRUE';
+  
+  var code0 = 'ls('
+  var code1 = String.format('{0})', value_path)
+  
+  var code5 = String.format("'-l' ,");
+  var code6 = String.format("'-a' ,");
+  
+  var code = code0;
+  
+  if(checkbox_long_format)
+	  code = code + code5;
+  
+  if(checkbox_not_ignore_dot)
+	  code = code + code6;
+  
+  code = code + code1;
+  
   return [code, Blockly.Python.ORDER_NONE];
 };
 

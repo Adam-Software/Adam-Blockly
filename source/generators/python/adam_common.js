@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy');
+Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os, sh, RHVoice, pygame');
 
 /**
   * common_eye_pack
@@ -282,9 +282,7 @@ Blockly.Python['common_music_minor_chord'] = function(block) {
   */
 Blockly.Python['common_music_minor_major_seventh_chords'] = function(block) {
   var dropdown_chord = block.getFieldValue('chord');
-
   var code = '\'' + dropdown_chord + '\'';
-
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
@@ -410,10 +408,42 @@ Blockly.Python['common_music_classic_note_extended'] = function(block) {
 };
 
 /**
+  * common_music_mixer_init
+  *
+  */
+Blockly.Python['common_music_mixer_init'] = function(block) {
+  Blockly.Python.definitions_['import_pygame'] = 'import pygame';
+  var code = 'pygame.mixer.init()\n';
+  return code;
+};
+
+/**
+  * common_music_mixer_load
+  *
+  */
+Blockly.Python['common_music_mixer_load'] = function(block) {
+  var value_path = Blockly.Python.valueToCode(block, 'path', Blockly.Python.ORDER_ATOMIC);
+  // TODO: Assemble Python into code variable.
+  var code = 'pygame.mixer.music.load(' + value_path + ')\n';
+  return code;
+}; 
+
+/**
+  * common_music_mixer_play
+  *
+  */
+Blockly.Python['common_music_mixer_play'] = function(block) {
+  Blockly.Python.definitions_['import_pygame'] = 'import pygame';
+  var code = 'pygame.mixer.music.play()\n';
+  return code;
+};
+
+/**
   * common_music_mixer_get_bussy
   *
   */
 Blockly.Python['common_music_mixer_get_bussy'] = function(block) {
+  Blockly.Python.definitions_['import_pygame'] = 'import pygame';
   var code = 'pygame.mixer.music.get_busy()';
   return [code, Blockly.Python.ORDER_NONE];
 };
@@ -489,22 +519,48 @@ Blockly.Python['common_music_fraction'] = function(block) {
 /**
   * common_say_native
   *
-  */
+  */  
 Blockly.Python['common_say_native'] = function(block) {
+  Blockly.Python.definitions_['import_subprocess'] = 'import subprocess';
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'subprocess.call("echo ' + value_text + ' | RHVoice-test --profile \'aleksandr-hq\'  2>/dev/null", shell=True)';
   return code;
 };
 
 /**
-  * common_say_native_procedure
+  * common_say_native_with_voice_param
   *
   */
-Blockly.Python['common_say_native_procedure'] = function(block) {
+Blockly.Python['common_say_native_with_voice_param'] = function(block) {
+  Blockly.Python.definitions_['import_subprocess'] = 'import subprocess';
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  var value_voice = Blockly.Python.valueToCode(block, 'voice', Blockly.Python.ORDER_ATOMIC);
   // TODO: Assemble Python into code variable.
-  var code = '...\n';
+  var code = 'subprocess.call("echo ' + value_text + ' | RHVoice-test --profile ' + value_voice + '  2>/dev/null", shell=True)';
+  return code;
+};
+
+/**
+  * common_say_sh
+  *
+  */
+Blockly.Python['common_say_sh'] = function(block) {
+  Blockly.Python.definitions_['from_sh_import_RHVoice'] = 'from sh import RHVoice';
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  var code = 'RHVoice(p=\'Aleksandr-hq\', _in='+ value_text + ')';
+  return code;
+};
+
+/**
+  * common_say_sh_with_voice_param
+  *
+  */
+Blockly.Python['common_say_sh_with_voice_param'] = function(block) {
+  Blockly.Python.definitions_['from_sh_import_RHVoice'] = 'from sh import RHVoice';
+  var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
+  var value_voice = Blockly.Python.valueToCode(block, 'voice', Blockly.Python.ORDER_ATOMIC);
+  var code = 'RHVoice(p=' + value_voice + ', _in='+ value_text + ')';
   return code;
 };
 
