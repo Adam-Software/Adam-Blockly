@@ -43,7 +43,7 @@ Blockly.defineBlocksWithJsonArray([
   ],
   "output": null,
   "colour": 230,
-  "tooltip": "Инициализаци¤ экземпл¤ра класса дл¤ работы с API с указанием необязательных параметров",
+  "tooltip": "Инициализация экземпляра класса для работы с API с указанием необязательных параметров",
   "helpUrl": ""
 },
 
@@ -501,7 +501,7 @@ Blockly.defineBlocksWithJsonArray([
   */  
 {
   "type": "servo_fingers",
-  "message0": "пальцы рук %1 переменная AdamIMU %2 %3 скорость %4 угол пальцев левой руки %5 угол пальцев правой руки %6",
+  "message0": "пальцы рук %1 переменная AdamIMU %2 %3 скорость %4 угол пальцев правой руки %5 угол пальцев левой руки %6",
   "args0": [
     {
       "type": "input_dummy"
@@ -521,12 +521,12 @@ Blockly.defineBlocksWithJsonArray([
     },
     {
       "type": "input_value",
-      "name": "angle_left_fingers",
+      "name": "angle_right_fingers",
       "check": "Number"
     },
     {
       "type": "input_value",
-      "name": "angle_right_fingers",
+      "name": "angle_left_fingers",
       "check": "Number"
     }
   ],
@@ -880,56 +880,6 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
- * wheels_left_rangefinder
- * 
- */
- 
-{
-  "type": "wheels_left_rangefinder",
-  "message0": "левый дальномер %1 переменная AdamIMU %2",
-  "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "field_variable",
-      "name": "imu",
-      "variable": "item"
-    }
-  ],
-  "inputsInline": false,
-  "output": null,
-  "colour": 230,
-  "tooltip": "Получение данных с дальномера расположенных на левой ноге",
-  "helpUrl": ""
-},
-
-/**
- * wheels_right_rangefinder
- * 
- */
- 
-{
-  "type": "wheels_right_rangefinder",
-  "message0": "правый дальномер %1 переменная AdamIMU %2",
-  "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "field_variable",
-      "name": "imu",
-      "variable": "item"
-    }
-  ],
-  "inputsInline": false,
-  "output": null,
-  "colour": 230,
-  "tooltip": "Получение данных с дальномера расположенных на правой ноге",
-  "helpUrl": ""
-},
-
-/**
  * servo_common_function
  * 
  */
@@ -1189,6 +1139,67 @@ Blockly.defineBlocksWithJsonArray([
   "output": null,
   "colour": 230,
   "tooltip": "Управление ногами",
+  "helpUrl": ""
+},
+
+/**
+ * rangefinder_left
+ * 
+ */
+{
+  "type": "rangefinder_left",
+  "message0": "левый дальномер %1 переменная AdamIMU %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Получение данных с дальномера расположенных на левой ноге",
+  "helpUrl": ""
+},
+
+/**
+ * rangefinder_right
+ * 
+ */
+{
+  "type": "rangefinder_right",
+  "message0": "правый дальномер %1 переменная AdamRangefinders %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "imu",
+      "variable": "item"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 230,
+  "tooltip": "Получение данных с дальномера расположенных на правой ноге",
+  "helpUrl": ""
+},
+
+/**
+ * import_adam_rangefinders
+ * 
+ */
+{
+  "type": "import_adam_rangefinders",
+  "message0": "инициализация дальномеров",
+  "output": null,
+  "colour": 230,
+  "tooltip": "Инициализация экземпляра класса для работы с дальномерами",
   "helpUrl": ""
 }
 
