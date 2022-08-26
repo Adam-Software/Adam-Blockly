@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('math, random, Number, smbus, AdamIMU, AdamRangefinders');
+Blockly.Python.addReservedWords('math, random, Number, smbus, AdamIMU, MotionAndRangefinders');
 
 /**
  * import_adam_servo_api_with_param
@@ -446,7 +446,7 @@ Blockly.Python['rangefinder_right'] = function(block) {
  *
  */
 Blockly.Python['import_adam_rangefinders'] = function(block) {
-  Blockly.Python.definitions_['from_readRangefinders_import_AdamRangefinders'] = 'from readRangefinders import AdamRangefinders';
-  var code = 'AdamRangefinders()';
+  Blockly.Python.definitions_['from_motionAndRangefinders_import_MotionAndRangefinders'] = 'from motionAndRangefinders import MotionAndRangefinders';
+  var code = 'MotionAndRangefinders()';
   return [code, Blockly.Python.ORDER_NONE];
 };
