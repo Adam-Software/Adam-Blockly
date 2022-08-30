@@ -1196,10 +1196,10 @@ Blockly.defineBlocksWithJsonArray([
  */
 {
   "type": "import_adam_rangefinders",
-  "message0": "инициализация дальномеров",
+  "message0": "инициализация дальномеров и колес",
   "output": null,
   "colour": 230,
-  "tooltip": "Инициализация экземпляра класса для работы с дальномерами",
+  "tooltip": "Инициализация экземпляра класса для работы с дальномерами и колесами",
   "helpUrl": ""
 }
 
