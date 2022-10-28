@@ -5,7 +5,7 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('math, random, Number, smbus, AdamIMU, MotionAndRangefinders');
+Blockly.Python.addReservedWords('math, random, Number, smbus, AdamIMU, MotionAndRangefinders, ReadSensor');
 
 /**
  * import_adam_servo_api_with_param
@@ -449,4 +449,45 @@ Blockly.Python['import_adam_rangefinders'] = function(block) {
   Blockly.Python.definitions_['from_motionAndRangefinders_import_MotionAndRangefinders'] = 'from motionAndRangefinders import MotionAndRangefinders';
   var code = 'MotionAndRangefinders()';
   return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * common_import_rangefinders_i2c
+ *
+ */
+Blockly.Python['common_import_rangefinders_i2c'] = function(block) {
+  var value_bus_number = Blockly.Python.valueToCode(block, 'bus_number', Blockly.Python.ORDER_ATOMIC);
+  var checkbox_verbose_mode = block.getFieldValue('verbose_mode') === 'TRUE';
+  var value_bus_number = Blockly.Python.valueToCode(block, 'bus_number', Blockly.Python.ORDER_ATOMIC);
+  Blockly.Python.definitions_['from_rangefinders_i2c.ReadSensor_import_ReadSensor'] = 'from rangefinders_i2c.ReadSensor import ReadSensor';
+
+  var code0 = 'ReadSensor('+ value_bus_number +')';
+  var code1 = 'ReadSensor('+ value_bus_number +', True)';
+
+  var code = code0
+
+  if(checkbox_verbose_mode)
+    code = code1
+
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+ * rangefinder_get_distance_i2c
+ *
+ */
+Blockly.Python['rangefinder_get_distance_i2c'] = function(block) {
+  var value_rangefinder_address = Blockly.Python.valueToCode(block, 'rangefinder_address', Blockly.Python.ORDER_ATOMIC);
+  var code = '.GetDistance('+ value_rangefinder_address +')';
+  return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+/**
+ * rangefinder_i2c_address
+ *
+ */
+Blockly.Python['rangefinder_i2c_address'] = function(block) {
+  var dropdown_device_addr = block.getFieldValue('device_addr');
+  var code = dropdown_device_addr;
+  return [code, Blockly.Python.ORDER_ATOMIC];
 };

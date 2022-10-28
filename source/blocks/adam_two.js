@@ -1201,6 +1201,105 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 230,
   "tooltip": "Инициализация экземпляра класса для работы с дальномерами и колесами",
   "helpUrl": ""
-}
+},
 
+/**
+ * common_import_rangefinders_i2c
+ *
+ */
+{
+  "type": "common_import_rangefinders_i2c",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "инициализировать дальномеры  %1 открыть шину I2C %2 показывать ошибки %3",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "CENTRE"
+    },
+    {
+      "type": "input_value",
+      "name": "bus_number",
+      "check": "Number",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "verbose_mode",
+      "checked": false
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 315,
+  "tooltip": "Инициализирует класс работы с дальномерами и открывает шину I2C",
+  "helpUrl": ""
+},
+
+/**
+ * rangefinder_get_distance_i2c
+ *
+ */
+{
+  "type": "rangefinder_get_distance_i2c",
+  "message0": "получить расстояние %1 адрес дальномера %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "rangefinder_address"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 315,
+  "tooltip": "Получение данных дальномера с указанным адресом ",
+  "helpUrl": ""
+},
+
+/**
+ * rangefinder_i2c_address
+ *
+ */
+{
+  "type": "rangefinder_i2c_address",
+  "message0": "переменные I2C дальномеров %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "device_addr",
+      "options": [
+        [
+          "0x18",
+          "24"
+        ],
+        [
+          "0x19",
+          "25"
+        ],
+        [
+          "0x1A",
+          "26"
+        ],
+        [
+          "0x1B",
+          "27"
+        ],
+        [
+          "0x1C",
+          "28"
+        ],
+        [
+          "0x1D",
+          "29"
+        ]
+      ]
+    }
+  ],
+  "output": null,
+  "colour": 315,
+  "tooltip": "",
+  "helpUrl": ""
+}
 ]);
