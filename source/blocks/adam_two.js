@@ -122,7 +122,7 @@ Blockly.defineBlocksWithJsonArray([
     "colour": 230,
     "tooltip": "",
     "helpUrl": ""
-}
+},
 
 /**
   * import_adam_servo_api
@@ -1419,5 +1419,351 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 315,
   "tooltip": "",
   "helpUrl": ""
+},
+
+/**
+  * "common_i2c_sensor_device"
+  *
+  */
+{
+  "type": "common_i2c_sensor_device",
+  "message0": "инициализация шины I2C",
+  "output": null,
+  "colour": 230,
+  "tooltip": "Create library object using our Extended Bus I2C port",
+  "helpUrl": ""
+},
+
+/**
+  * "common_i2c_sensor_device_extended"
+  *
+  */
+{
+  "type": "common_i2c_sensor_device_extended",
+  "message0": "инициализация шины I2C %1 I2C порт %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "i2c_bus",
+      "check": "Number"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "Create library object using our Extended Bus I2C port. ",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_declaration
+  *
+  */
+{
+  "type": "common_sensor_declaration",
+  "message0": "инициализация датчиков %1 переменная шины i2c %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "i2c_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_declaration_extended
+  *
+  */
+{
+  "type": "common_sensor_declaration_extended",
+  "message0": "инициализация датчиков %1 переменная шины i2c %2 %3 адрес устройства i2c %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "i2c_variable",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "sensor_address"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+
+/**
+  * common_sensor_temperature
+  *
+  */
+{
+  "type": "common_sensor_temperature",
+  "message0": "датчик температуры %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_acceleration
+  *
+  */
+{
+  "type": "common_sensor_acceleration",
+  "message0": "датчик ускорения %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_magnetometer
+  *
+  */
+{
+  "type": "common_sensor_magnetometer",
+  "message0": "магнитометр %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_gyro
+  *
+  */
+{
+  "type": "common_sensor_gyro",
+  "message0": "гироскоп %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_euler
+  *
+  */
+{
+  "type": "common_sensor_euler",
+  "message0": "датчик угла Эйлера %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_quaternion
+  *
+  */
+{
+  "type": "common_sensor_quaternion",
+  "message0": "кватернион %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_linear_acceleration
+  *
+  */
+{
+  "type": "common_sensor_linear_acceleration",
+  "message0": "линейное ускорение %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_euler
+  *
+  */
+{
+
+  "type": "common_sensor_euler",
+  "message0": "датчик угла Эйлера %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_quaternion
+  *
+  */
+{
+  "type": "common_sensor_quaternion",
+  "message0": "кватернион %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * common_sensor_linear_acceleration
+  *
+  */
+{
+  "type": "common_sensor_linear_acceleration",
+  "message0": "линейное ускорение %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+
+/**
+  * common_sensor_gravity
+  *
+  */
+{
+  "type": "common_sensor_gravity",
+  "message0": "гравитация %1 переменная датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }
+
 ]);

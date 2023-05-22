@@ -539,3 +539,127 @@ Blockly.Python['rangefinder_i2c_address'] = function(block) {
   var code = dropdown_device_addr;
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+/**
+  * common_i2c_sensor_device
+  *
+  */
+Blockly.Python['common_i2c_sensor_device'] = function(block) {
+  Blockly.Python.definitions_['import_board'] = 'import board';
+  var code = 'board.I2C()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_i2c_sensor_device_extended
+  *
+  */
+Blockly.Python['common_i2c_sensor_device_extended'] = function(block) {
+  Blockly.Python.definitions_['from_adafruit_extended_bus_import_ExtendedI2C_as_I2C'] = 'from adafruit_extended_bus import ExtendedI2C as I2C';
+  var value_i2c_bus = Blockly.Python.valueToCode(block, 'i2c_bus', Blockly.Python.ORDER_ATOMIC);
+  var code = 'I2C(' + value_i2c_bus +')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_declaration
+  *
+  */
+Blockly.Python['common_sensor_declaration'] = function(block) {
+  Blockly.Python.definitions_['import_adafruit_bno055'] = 'import adafruit_bno055';
+  var variable_i2c_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('i2c_variable'), Blockly.Variables.NAME_TYPE);
+  var code = 'adafruit_bno055.BNO055_I2C(' + variable_i2c_variable +' ,0x29)';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_declaration_extended
+  *
+  */
+Blockly.Python['common_sensor_declaration_extended'] = function(block) {
+  Blockly.Python.definitions_['import_adafruit_bno055'] = 'import adafruit_bno055';
+  var variable_i2c_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('i2c_variable'), Blockly.Variables.NAME_TYPE);
+  var value_sensor_address = Blockly.Python.valueToCode(block, 'sensor_address', Blockly.Python.ORDER_ATOMIC);
+  var code = 'adafruit_bno055.BNO055_I2C(' + variable_i2c_variable + ' ,' + value_sensor_address + ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_temperature
+  *
+  */
+Blockly.Python['common_sensor_temperature'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.temperature';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_acceleration
+  *
+  */
+Blockly.Python['common_sensor_acceleration'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.acceleration';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_magnetometer
+  *
+  */
+Blockly.Python['common_sensor_magnetometer'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.magnetic';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_gyro
+  *
+  */
+Blockly.Python['common_sensor_gyro'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.gyro';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_euler
+  *
+  */
+Blockly.Python['common_sensor_euler'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.euler';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_quaternion
+  *
+  */
+Blockly.Python['common_sensor_quaternion'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.quaternion';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_linear_acceleration
+  *
+  */
+Blockly.Python['common_sensor_linear_acceleration'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.linear_acceleration';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/**
+  * common_sensor_linear_gravity
+  *
+  */
+Blockly.Python['common_sensor_gravity'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.gravity';
+  return [code, Blockly.Python.ORDER_NONE];
+};
