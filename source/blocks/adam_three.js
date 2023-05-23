@@ -85,11 +85,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controler_const_head
+  * controller_const_head
   *
   */
 {
-  "type": "controler_const_head",
+  "type": "controller_const_head",
   "message0": "голова",
   "output": null,
   "colour": 180,
@@ -98,11 +98,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controler_const_neck
+  * controller_const_neck
   *
   */
 {
-  "type": "controler_const_neck",
+  "type": "controller_const_neck",
   "message0": "шея",
   "output": null,
   "colour": 180,
@@ -111,11 +111,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controler_const_right_hand
+  * controller_const_right_hand
   *
   */
 {
-  "type": "controler_const_right_hand",
+  "type": "controller_const_right_hand",
   "message0": "правая рука",
   "output": null,
   "colour": 180,
@@ -124,11 +124,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controler_const_left_hand
+  * controller_const_left_hand
   *
   */
 {
-  "type": "controler_const_left_hand",
+  "type": "controller_const_left_hand",
   "message0": "левая рука",
   "output": null,
   "colour": 180,
@@ -137,11 +137,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_right_lower_arm_up
+  * controller_const_right_lower_arm_up
   *
   */
 {
-  "type": "controller_right_lower_arm_up",
+  "type": "controller_const_right_lower_arm_up",
   "message0": "правый локоть",
   "output": null,
   "colour": 180,
@@ -150,11 +150,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_left_lower_arm_up
+  * controller_const_left_lower_arm_up
   *
   */
 {
-  "type": "controller_left_lower_arm_up",
+  "type": "controller_const_left_lower_arm_up",
   "message0": "левый локоть",
   "output": null,
   "colour": 180,
@@ -163,11 +163,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_right_upper_arm
+  * controller_const_right_upper_arm
   *
   */
 {
-  "type": "controller_right_upper_arm",
+  "type": "controller_const_right_upper_arm",
   "message0": "правое предплечье",
   "output": null,
   "colour": 180,
@@ -176,11 +176,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_left_upper_arm
+  * controller_const_left_upper_arm
   *
   */
 {
-  "type": "controller_left_upper_arm",
+  "type": "controller_const_left_upper_arm",
   "message0": "левое предплечье",
   "output": null,
   "colour": 180,
@@ -189,11 +189,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_right_shoulder
+  * controller_const_right_shoulder
   *
   */
 {
-  "type": "controller_right_shoulder",
+  "type": "controller_const_right_shoulder",
   "message0": "правое плечо",
   "output": null,
   "colour": 180,
@@ -202,11 +202,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_left_shoulder
+  * controller_const_left_shoulder
   *
   */
 {
-  "type": "controller_left_shoulder",
+  "type": "controller_const_left_shoulder",
   "message0": "левое плечо",
   "output": null,
   "colour": 180,
@@ -215,11 +215,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_chest
+  * controller_const_chest
   *
   */
 {
-  "type": "controller_chest",
+  "type": "controller_const_chest",
   "message0": "грудь",
   "output": null,
   "colour": 180,
@@ -228,11 +228,11 @@ Blockly.defineBlocksWithJsonArray([
 },
 
 /**
-  * controller_lover_chest
+  * controller_const_press
   *
   */
 {
-  "type": "controller_lover_chest",
+  "type": "controller_const_press",
   "message0": "пресс",
   "output": null,
   "colour": 180,
