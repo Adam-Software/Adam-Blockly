@@ -12,51 +12,25 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "controller_motor_command",
-  "message0": "команда %1 константа сервопривода %2 угол поворота %3 скорость %4",
+  "message0": "команда %1 константа сервопривода %2 угол поворота %3",
   "args0": [
     {
       "type": "input_dummy"
     },
     {
       "type": "input_value",
-      "name": "servo_constant"
+      "name": "servo_constant",
+      "check": "String"
     },
     {
       "type": "input_value",
-      "name": "angle"
-    },
-    {
-      "type": "input_value",
-      "name": "speed"
+      "name": "angle",
+      "check": "Number"
     }
   ],
   "output": null,
   "colour": 180,
   "tooltip": "Блок управление сервоприводами робота",
-  "helpUrl": ""
-},
-
-/**
-  * servo_speed_variable
-  *
-  */
-{
-  "type": "controller_speed_variable",
-  "message0": "скорость %1",
-  "args0": [
-    {
-      "type": "field_number",
-      "name": "speed",
-      "value": 0,
-      "min": 0,
-      "max": 2000,
-      "precision": 1
-    }
-  ],
-  "inputsInline": false,
-  "output": "Number",
-  "colour": 180,
-  "tooltip": "Переменная скорости. Может иметь значение от 0 до 2000",
   "helpUrl": ""
 },
 
@@ -81,6 +55,44 @@ Blockly.defineBlocksWithJsonArray([
   "output": "Number",
   "colour": 180,
   "tooltip": "Переменная угла в процентах. Может иметь значение от 0 до 100",
+  "helpUrl": ""
+},
+
+/**
+  * controller_new_instance_class
+  *
+  */
+{
+  "type": "controller_new_instance_class",
+  "message0": "новый экземпляр класса AdamController()",
+  "output": null,
+  "colour": 180,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * controller_handle_command
+  *
+  */
+{
+  "type": "controller_handle_command",
+  "message0": "переменная класса AdamController() %1 список команд %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "instance_class_variable"
+    },
+    {
+      "type": "input_value",
+      "name": "command_array",
+      "check": "Array"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 180,
+  "tooltip": "",
   "helpUrl": ""
 },
 
@@ -238,11 +250,83 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 180,
   "tooltip": "",
   "helpUrl": ""
-}
+},
+
+/**
+  * controller_const_left_upper_leg
+  *
+  */
+{
+  "type": "controller_const_left_upper_leg",
+  "message0": "левое бедро",
+  "output": null,
+  "colour": 220,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * controller_const_right_upper_leg
+  *
+  */
+{
+  "type": "controller_const_right_upper_leg",
+  "message0": "правое бедро",
+  "output": null,
+  "colour": 220,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * controller_const_left_lower_leg
+  *
+  */
+{
+  "type": "controller_const_left_lower_leg",
+  "message0": "левое колено",
+  "output": null,
+  "colour": 220,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
 
+/**
+  * controller_const_right_upper_leg
+  *
+  */
+{
+  "type": "controller_const_right_lower_leg",
+  "message0": "правое колено",
+  "output": null,
+  "colour": 220,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
+/**
+  * controller_const_left_foot
+  *
+  */
+{
+  "type": "controller_const_left_foot",
+  "message0": "левая стопа",
+  "output": null,
+  "colour": 220,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
-
-
-]);
+/**
+  * controller_const_right_foot
+  *
+  */
+{
+  "type": "controller_const_right_foot",
+  "message0": "правая стопа",
+  "output": null,
+  "colour": 220,
+  "tooltip": "",
+  "helpUrl": ""
+}]);
