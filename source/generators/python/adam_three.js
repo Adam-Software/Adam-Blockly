@@ -15,63 +15,63 @@ Blockly.Python['controller_motor_command'] = function(block) {
   return [code, Blockly.Python.ORDER_NONE];
 };
 
-Blockly.Python['controler_const_head'] = function(block) {
-  var code = 'Head';
+Blockly.Python['controller_const_head'] = function(block) {
+  var code = 'head';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controler_const_neck'] = function(block) {
-  var code = 'Neck';
+Blockly.Python['controller_const_neck'] = function(block) {
+  var code = 'neck';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controler_const_right_hand'] = function(block) {
-  var code = 'Right_Hand';
+Blockly.Python['controller_const_right_hand'] = function(block) {
+  var code = 'right_hand';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controler_const_left_hand'] = function(block) {
-  var code = 'Left_Hand';
+Blockly.Python['controller_const_left_hand'] = function(block) {
+  var code = 'left_hand';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_right_lower_arm_up'] = function(block) {
-  var code = 'Right_LowerArm_Up';
+Blockly.Python['controller_const_right_lower_arm_up'] = function(block) {
+  var code = 'right_lower_arm_up';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_left_lower_arm_up'] = function(block) {
-  var code = 'Left_LowerArm_Up';
+Blockly.Python['controller_const_left_lower_arm_up'] = function(block) {
+  var code = 'left_lower_arm_up';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_right_upper_arm'] = function(block) {
-  var code = 'Right_UpperArm';
+Blockly.Python['controller_const_right_upper_arm'] = function(block) {
+  var code = 'right_upper_arm';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_left_upper_arm'] = function(block) {
-  var code = 'Left_UpperArm';
+Blockly.Python['controller_const_left_upper_arm'] = function(block) {
+  var code = 'left_upper_arm';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_right_shoulder'] = function(block) {
-  var code = 'Right_Shoulder';
+Blockly.Python['controller_const_right_shoulder'] = function(block) {
+  var code = 'right_shoulder';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_left_shoulder'] = function(block) {
-  var code = 'Left_Shoulder';
+Blockly.Python['controller_const_left_shoulder'] = function(block) {
+  var code = 'left_shoulder';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_chest'] = function(block) {
-  var code = 'Chest';
+Blockly.Python['controller_const_chest'] = function(block) {
+  var code = 'chest';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
-Blockly.Python['controller_lover_chest'] = function(block) {
-  var code = 'LoverChest';
+Blockly.Python['controller_const_press'] = function(block) {
+  var code = 'press';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
 
