@@ -5,9 +5,10 @@
 
 'use strict';
 
-Blockly.Python.addReservedWords('');
+Blockly.Python.addReservedWords('AdamManager', 'SerializableCommands', 'MotorCommand');
 
 Blockly.Python['controller_motor_command'] = function(block) {
+  Blockly.Python.definitions_['from_adam_sdk_import_MotorCommand'] = 'from adam_sdk import MotorCommand';
   var value_servo_constant = Blockly.Python.valueToCode(block, 'servo_constant', Blockly.Python.ORDER_ATOMIC);
   var value_angle = Blockly.Python.valueToCode(block, 'angle', Blockly.Python.ORDER_ATOMIC);
   var code = 'MotorCommand(' + value_servo_constant + ", " + value_angle + ')';
@@ -15,14 +16,16 @@ Blockly.Python['controller_motor_command'] = function(block) {
 };
 
 Blockly.Python['controller_new_instance_class'] = function(block) {
-  var code = 'AdamController()';
+  Blockly.Python.definitions_['from_adam_sdk_import_AdamManager'] = 'from adam_sdk import AdamManager';
+  var code = 'AdamManager()';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
 Blockly.Python['controller_handle_command'] = function(block) {
+  Blockly.Python.definitions_['from_adam_sdk_import_SerializableCommands'] = 'from adam_sdk import SerializableCommands';
   var value_instance_class_variable = Blockly.Python.valueToCode(block, 'instance_class_variable', Blockly.Python.ORDER_ATOMIC);
   var value_command_array = Blockly.Python.valueToCode(block, 'command_array', Blockly.Python.ORDER_ATOMIC);
-  var code = value_instance_class_variable +'.HandleCommand(commands=SerializableCommands(' + value_command_array +'))';
+  var code = value_instance_class_variable +'.handle_command(commands=SerializableCommands(' + value_command_array +'))';
   return code;
 };
 
