@@ -7,6 +7,548 @@
 Blockly.defineBlocksWithJsonArray([
 
 /**
+  * move_free_vector_variable
+  *
+  */
+{
+  "type": "move_free_vector_variable",
+  "lastDummyAlign0": "CENTRE",
+  "message0": "вектор движения X: %1 Y: %2 Z: %3",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "x",
+      "value": 0,
+      "min": -1,
+      "max": 1,
+      "precision": 0.1
+    },
+    {
+      "type": "field_number",
+      "name": "y",
+      "value": 0,
+      "min": -1,
+      "max": 1,
+      "precision": 0.1
+    },
+    {
+      "type": "field_number",
+      "name": "z",
+      "value": 0,
+      "min": -1,
+      "max": 1,
+      "precision": 0.1
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_free_vector
+  *
+  */
+{
+  "type": "move_free_vector",
+  "message0": "переменная класса AdamManager() %1 задать вектор движения %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "instance_variable"
+    },
+    {
+      "type": "input_value",
+      "name": "vector_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * speed_clear_register
+  *
+  */
+{
+  "type": "speed_clear_register",
+  "message0": "очистить значения регистра",
+  "inputsInline": false,
+  "output": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * speed_get_register
+  *
+  */
+
+{
+  "type": "move_get_register",
+  "lastDummyAlign0": "RIGHT",
+  "message0": "переменная класса AdamManager() %1 получить регистр колеса %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "instance_class_variable",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "wheel_position",
+      "options": [
+        [
+          "переднее правое",
+          "front_right"
+        ],
+        [
+          "переднее левое",
+          "front_left"
+        ],
+        [
+          "заднее правое",
+          "rear_right"
+        ],
+        [
+          "заднее левое",
+          "rear_left"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_stop
+  *
+  */
+{
+  "type": "move_vector_stop",
+  "message0": "направление стоп",
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_turn_left
+  *
+  */
+{
+  "type": "move_vector_turn_left",
+  "message0": "направление разворот налево %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_turn_right
+  *
+  */
+{
+  "type": "move_vector_turn_right",
+  "message0": "направление разворот направо %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_right_and_back
+  *
+  */
+{
+  "type": "move_vector_right_and_back",
+  "message0": "направление вправо и назад %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_left_and_back
+  *
+  */
+{
+  "type": "move_vector_left_and_back",
+  "message0": "направление влево и назад %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_left_and_forward
+  *
+  */
+{
+  "type": "move_vector_left_and_forward",
+  "message0": "направление влево и вперед %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_right_and_forward
+  *
+  */
+{
+  "type": "move_vector_right_and_forward",
+  "message0": "направление вправо и вперед %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_left
+  *
+  */
+{
+  "type": "move_vector_left",
+  "message0": "направление влево %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_right
+  *
+  */
+{
+  "type": "move_vector_right",
+  "message0": "направление вправо %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_back
+  *
+  */
+{
+  "type": "move_vector_back",
+  "message0": "направление назад %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * speed_vector_value
+  *
+  */
+{
+  "type": "speed_vector_value",
+  "message0": "значение скорости %1",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "speed_vector_value",
+      "value": 1,
+      "min": 0,
+      "max": 1,
+      "precision": 0.1
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_vector_forward
+  *
+  */
+{
+  "type": "move_vector_forward",
+  "message0": "направление вперед %1 со скоростью %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "speed_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 10,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_controller_vector
+  *
+  */
+{
+  "type": "move_controller_vector",
+  "message0": "переменная класса AdamManager() %1 задать направление движения %2",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "instance_variable"
+    },
+    {
+      "type": "input_value",
+      "name": "vector_variable",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * speed_stop
+  *
+  */
+{
+  "type": "speed_stop",
+  "message0": "стоп",
+  "inputsInline": false,
+  "output": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_command_set_speed
+  *
+  */
+{
+  "type": "speed_value",
+  "message0": "значение скорости %1",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "speed_value",
+      "value": 1,
+      "min": -1,
+      "max": 1,
+      "precision": 0.1
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * move_command_set_speed
+  *
+  */
+{
+  "type": "move_command_set_speed",
+  "message0": "задать скорость %1",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "speed",
+      "check": "Number",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "output": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+/**
+  * move_controller
+  *
+  */
+{
+  "type": "move_controller",
+  "message0": "переменная класса AdamManager() %1 управление колесом %2 %3 команда %4",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "instance_class_variable",
+      "align": "RIGHT"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "wheel_position",
+      "options": [
+        [
+          "переднее правое",
+          "front_right"
+        ],
+        [
+          "переднее левое",
+          "front_left"
+        ],
+        [
+          "заднее правое",
+          "rear_right"
+        ],
+        [
+          "заднее левое",
+          "rear_left"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy",
+      "align": "RIGHT"
+    },
+    {
+      "type": "input_value",
+      "name": "command",
+      "align": "RIGHT"
+    }
+  ],
+  "inputsInline": false,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
   * controller_motor_command
   *
   */
@@ -31,6 +573,29 @@ Blockly.defineBlocksWithJsonArray([
   "output": null,
   "colour": 180,
   "tooltip": "Блок управление сервоприводами робота",
+  "helpUrl": ""
+},
+
+/**
+  * controller_return_to_start_position_command
+  *
+  */
+{
+  "type": "controller_return_to_start_position_command",
+  "message0": "команда возврата в нулевую позицию %1 переменная класса AdamController() %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "instance_class_variable"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 180,
+  "tooltip": "",
   "helpUrl": ""
 },
 
@@ -64,7 +629,7 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "controller_new_instance_class",
-  "message0": "новый экземпляр класса AdamController()",
+  "message0": "новый экземпляр класса AdamManager()",
   "output": null,
   "colour": 180,
   "tooltip": "",
@@ -77,7 +642,7 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "controller_handle_command",
-  "message0": "переменная класса AdamController() %1 список команд %2",
+  "message0": "переменная класса AdamManager() %1 список команд %2",
   "args0": [
     {
       "type": "input_value",

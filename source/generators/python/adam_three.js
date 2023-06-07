@@ -7,12 +7,148 @@
 
 Blockly.Python.addReservedWords('AdamManager', 'SerializableCommands', 'MotorCommand');
 
+Blockly.Python['move_free_vector_variable'] = function(block) {
+  var number_x = block.getFieldValue('x');
+  var number_y = block.getFieldValue('y');
+  var number_z = block.getFieldValue('z');
+  var code = '(' + number_x +', '+ number_y +'), ' + number_z;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_free_vector'] = function(block) {
+  var value_instance_variable = Blockly.Python.valueToCode(block, 'instance_variable', Blockly.Python.ORDER_ATOMIC);
+  var value_vector_variable = Blockly.Python.valueToCode(block, 'vector_variable', Blockly.Python.ORDER_NONE);
+  var code = value_instance_variable + '.move(' + value_vector_variable + ')\n';
+  return code;
+};
+
+Blockly.Python['speed_clear_register'] = function(block) {
+  var code = '.clear_registers()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_get_register'] = function(block) {
+  var value_instance_class_variable = Blockly.Python.valueToCode(block, 'instance_class_variable', Blockly.Python.ORDER_NONE);
+  var dropdown_wheel_position = block.getFieldValue('wheel_position');
+  var code =  value_instance_class_variable + '.move_controller.' + dropdown_wheel_position + '.get_registers()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_stop'] = function(block) {
+  var code = '(0, 0), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_turn_left'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '(0, 0), -' + value_speed_variable;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_turn_right'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '(0, 0), ' + value_speed_variable;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_right_and_back'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '('+ value_speed_variable + ', -' + value_speed_variable + '), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_left_and_back'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '(-'+ value_speed_variable + ', -' + value_speed_variable + '), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_left_and_forward'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '(-'+ value_speed_variable + ', ' + value_speed_variable + '), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_right_and_forward'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '('+ value_speed_variable + ', ' + value_speed_variable + '), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_left'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '(-'+ value_speed_variable + ', 0), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_right'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '('+ value_speed_variable + ', 0), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_back'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '(0, -' + value_speed_variable +'), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['speed_vector_value'] = function(block) {
+  var number_speed_vector_value = block.getFieldValue('speed_vector_value');
+  var code = number_speed_vector_value;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_vector_forward'] = function(block) {
+  var value_speed_variable = Blockly.Python.valueToCode(block, 'speed_variable', Blockly.Python.ORDER_NONE);
+  var code = '(0, ' + value_speed_variable +'), 0';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_controller_vector'] = function(block) {
+  var value_instance_variable = Blockly.Python.valueToCode(block, 'instance_variable', Blockly.Python.ORDER_ATOMIC);
+  var value_vector_variable = Blockly.Python.valueToCode(block, 'vector_variable', Blockly.Python.ORDER_NONE);
+  var code = value_instance_variable + '.move(' + value_vector_variable + ')\n';
+  return code;
+};
+
+Blockly.Python['speed_stop'] = function(block) {
+  var code = '.set_speed(0)';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['speed_value'] = function(block) {
+  var number_speed_value = block.getFieldValue('speed_value');
+  var code = number_speed_value;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_command_set_speed'] = function(block) {
+  var value_speed = Blockly.Python.valueToCode(block, 'speed', Blockly.Python.ORDER_NONE)
+  var code = '.set_speed(' + value_speed + ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['move_controller'] = function(block) {
+  var value_instance_class_variable = Blockly.Python.valueToCode(block, 'instance_class_variable', Blockly.Python.ORDER_ATOMIC);
+  var dropdown_wheel_position = block.getFieldValue('wheel_position');
+  var value_command = Blockly.Python.valueToCode(block, 'command', Blockly.Python.ORDER_NONE);
+  var code = value_instance_class_variable + '.move_controller.' +  dropdown_wheel_position  + value_command + '\n';
+  return code;
+};
+
 Blockly.Python['controller_motor_command'] = function(block) {
   Blockly.Python.definitions_['from_adam_sdk_import_MotorCommand'] = 'from adam_sdk import MotorCommand';
   var value_servo_constant = Blockly.Python.valueToCode(block, 'servo_constant', Blockly.Python.ORDER_ATOMIC);
   var value_angle = Blockly.Python.valueToCode(block, 'angle', Blockly.Python.ORDER_ATOMIC);
   var code = 'MotorCommand(' + value_servo_constant + ", " + value_angle + ')';
   return [code, Blockly.Python.ORDER_ATOMIC];
+};
+
+Blockly.Python['controller_return_to_start_position_command'] = function(block) {
+  var value_instance_class_variable = Blockly.Python.valueToCode(block, 'instance_class_variable', Blockly.Python.ORDER_ATOMIC);
+  var code = value_instance_class_variable +'.return_to_start_position()\n';
+  return code;
 };
 
 Blockly.Python['controller_new_instance_class'] = function(block) {
@@ -25,7 +161,7 @@ Blockly.Python['controller_handle_command'] = function(block) {
   Blockly.Python.definitions_['from_adam_sdk_import_SerializableCommands'] = 'from adam_sdk import SerializableCommands';
   var value_instance_class_variable = Blockly.Python.valueToCode(block, 'instance_class_variable', Blockly.Python.ORDER_ATOMIC);
   var value_command_array = Blockly.Python.valueToCode(block, 'command_array', Blockly.Python.ORDER_ATOMIC);
-  var code = value_instance_class_variable +'.handle_command(commands=SerializableCommands(' + value_command_array +'))';
+  var code = value_instance_class_variable +'.handle_command(commands=SerializableCommands(' + value_command_array +'))\n';
   return code;
 };
 
