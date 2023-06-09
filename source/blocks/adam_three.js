@@ -582,7 +582,7 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "controller_return_to_start_position_command",
-  "message0": "команда возврата в нулевую позицию %1 переменная класса AdamController() %2",
+  "message0": "команда возврата в нулевую позицию %1 переменная класса AdamManager() %2",
   "args0": [
     {
       "type": "input_dummy"

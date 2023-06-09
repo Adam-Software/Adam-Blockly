@@ -140,7 +140,7 @@ Blockly.Python['common_system_resources_music'] = function(block) {
   var code = "";
   
   if(value_path == '')
-	  code = "'/home/pi/Music'"
+	  code = "'/home/adam/Music'"
   else
 	  code =  String.format("'/home/pi/Music/{0}'",  value_path.replaceAll("'", ""))
   
