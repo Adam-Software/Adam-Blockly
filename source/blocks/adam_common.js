@@ -344,8 +344,8 @@ Blockly.defineBlocksWithJsonArray([
           "94"
         ],
         [
-          "0x5F",
-          "95"
+          "0x5D",
+          "93"
         ]
       ]
     }
