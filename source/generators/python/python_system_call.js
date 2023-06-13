@@ -124,12 +124,12 @@ Blockly.Python['common_system_pipeline'] = function(block) {
   * Example for BNO055 
   *
   */
-Blockly.Python['common_system_example_flack_app'] = function(block) {
-  Blockly.Python.definitions_['from_bno055_webgl.server_import_app'] = 'from bno055_webgl.server import app';
-  var value_host = Blockly.Python.valueToCode(block, 'host', Blockly.Python.ORDER_NONE);
-  var code = 'app.run(host=' + value_host + ', threaded=True)';
-  return code;
-};
+//Blockly.Python['common_system_example_flack_app'] = function(block) {
+//  Blockly.Python.definitions_['from_bno055_webgl.server_import_app'] = 'from bno055_webgl.server import app';
+//  var value_host = Blockly.Python.valueToCode(block, 'host', Blockly.Python.ORDER_NONE);
+//  var code = 'app.run(host=' + value_host + ', threaded=True)';
+//  return code;
+//};
 
 /**
   * common_system_resources_music
@@ -142,7 +142,7 @@ Blockly.Python['common_system_resources_music'] = function(block) {
   if(value_path == '')
 	  code = "'/home/adam/Music'"
   else
-	  code =  String.format("'/home/pi/Music/{0}'",  value_path.replaceAll("'", ""))
+	  code =  String.format("'/home/adam/Music/{0}'",  value_path.replaceAll("'", ""))
   
   return [code, Blockly.Python.ORDER_NONE];
 };

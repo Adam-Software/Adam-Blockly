@@ -246,24 +246,24 @@ Blockly.defineBlocksWithJsonArray([
   * common_system_example_flack_app
   *
   */
-{
-  "type": "common_system_example_flack_app",
-  "message0": "flack app %1 host ip %2",
-  "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_value",
-      "name": "host"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 230,
-  "tooltip": "Запуск сервера демонстрации возможностей работы с датчиком BNO055",
-  "helpUrl": "https://learn.adafruit.com/bno055-absolute-orientation-sensor-with-raspberry-pi-and-beaglebone-black/webgl-example"
-},
+//{
+//  "type": "common_system_example_flack_app",
+//  "message0": "flack app %1 host ip %2",
+//  "args0": [
+//    {
+//      "type": "input_dummy"
+//    },
+//    {
+//      "type": "input_value",
+//      "name": "host"
+//    }
+//  ],
+//  "previousStatement": null,
+//  "nextStatement": null,
+//  "colour": 230,
+//  "tooltip": "Запуск сервера демонстрации возможностей работы с датчиком BNO055",
+//  "helpUrl": "https://learn.adafruit.com/bno055-absolute-orientation-sensor-with-raspberry-pi-and-beaglebone-black/webgl-example"
+//},
 
 /**
   * common_system_resources_music
