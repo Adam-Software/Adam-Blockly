@@ -2007,7 +2007,7 @@ Blockly.defineBlocksWithJsonArray([
   */
 {
   "type": "common_comment",
-  "message0": "коментарий %1",
+  "message0": "комментарий %1",
   "args0": [
 	{
 	  "type": "field_input",

@@ -266,3 +266,68 @@ Blockly.Python['controller_const_right_foot'] = function(block) {
   var code = "'right_foot'";
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
+
+Blockly.Python['adam_two_seven_sensor_temperature'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.temperature';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['adam_two_seven_sensor_pressure'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.pressure';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['adam_two_seven_sensor_altitude'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.altitude';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+Blockly.Python['adam_two_seven_sensor_acceleration'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.readAccel()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['adam_two_seven_sensor_gyro'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.readGyro()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['adam_two_seven_sensor_magnetometer'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var code = variable_sensor_variable + '.readMagnet()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+
+Blockly.Python['adam_two_seven_sensor_declaration_extended'] = function(block) {
+  Blockly.Python.definitions_['import_adafruit_bmp280'] = 'import adafruit_bmp280';
+  var variable_i2c_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('i2c_variable'), Blockly.Variables.NAME_TYPE);
+  var value_sensor_address = Blockly.Python.valueToCode(block, 'sensor_address', Blockly.Python.ORDER_NONE);
+  var code = 'adafruit_bmp280.Adafruit_BMP280_I2C(' + variable_i2c_variable + ', ' + value_sensor_address +  ')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['adam_two_seven_bmp280_addr_const'] = function(block) {
+  var dropdown_addr_variable = block.getFieldValue('addr_variable');
+  var code = dropdown_addr_variable;
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+Blockly.Python['adam_two_seven_sensor_set_pressure'] = function(block) {
+  var variable_sensor_variable = Blockly.Python.nameDB_.getName(block.getFieldValue('sensor_variable'), Blockly.Variables.NAME_TYPE);
+  var number_current_atmospheric_pressure_variable = block.getFieldValue('current_atmospheric_pressure_variable');
+  var code = variable_sensor_variable + '.sea_level_pressure = ' + number_current_atmospheric_pressure_variable + '\n';
+  return code;
+};
+
+Blockly.Python['adam_two_seven_sensor_mpu_9250_declaration'] = function(block) {
+  Blockly.Python.definitions_['import_FaBo9Axis_MPU9250'] = 'import FaBo9Axis_MPU9250';
+  var code = 'FaBo9Axis_MPU9250.MPU9250()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+

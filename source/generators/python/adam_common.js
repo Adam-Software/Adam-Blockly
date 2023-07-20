@@ -299,7 +299,6 @@ Blockly.Python['common_music_mixer_init'] = function(block) {
   */
 Blockly.Python['common_music_mixer_load'] = function(block) {
   var value_path = Blockly.Python.valueToCode(block, 'path', Blockly.Python.ORDER_NONE);
-  // TODO: Assemble Python into code variable.
   var code = 'pygame.mixer.music.load(' + value_path + ')\n';
   return code;
 }; 
@@ -399,7 +398,6 @@ Blockly.Python['common_music_fraction'] = function(block) {
 Blockly.Python['common_say_native'] = function(block) {
   Blockly.Python.definitions_['import_subprocess'] = 'import subprocess';
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
   var code = 'subprocess.call("echo ' + value_text + ' | RHVoice-test --profile \'aleksandr-hq\'  2>/dev/null", shell=True)';
   return code;
 };
@@ -412,7 +410,6 @@ Blockly.Python['common_say_native_with_voice_param'] = function(block) {
   Blockly.Python.definitions_['import_subprocess'] = 'import subprocess';
   var value_text = Blockly.Python.valueToCode(block, 'text', Blockly.Python.ORDER_ATOMIC);
   var value_voice = Blockly.Python.valueToCode(block, 'voice', Blockly.Python.ORDER_ATOMIC);
-  // TODO: Assemble Python into code variable.
   var code = 'subprocess.call("echo ' + value_text + ' | RHVoice-test --profile ' + value_voice + '  2>/dev/null", shell=True)';
   return code;
 };

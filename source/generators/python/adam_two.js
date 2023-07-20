@@ -663,3 +663,4 @@ Blockly.Python['common_sensor_gravity'] = function(block) {
   var code = variable_sensor_variable + '.gravity';
   return [code, Blockly.Python.ORDER_NONE];
 };
+

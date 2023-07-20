@@ -894,4 +894,235 @@ Blockly.defineBlocksWithJsonArray([
   "colour": 220,
   "tooltip": "",
   "helpUrl": ""
-}]);
+},
+
+/**
+  * adam_two_seven_sensor_temperature
+  *
+  */
+{
+  "type": "adam_two_seven_sensor_temperature",
+  "message0": "датчик температуры %1 переменная класса датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * adam_two_seven_sensor_acceleration
+  *
+  */
+{
+  "type": "adam_two_seven_sensor_acceleration",
+  "message0": "датчик ускорения %1 переменная класса датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * adam_two_seven_sensor_gyro
+  *
+  */
+{
+  "type": "adam_two_seven_sensor_gyro",
+  "message0": "гироскоп %1 переменная класса датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * adam_two_seven_sensor_magnetometer
+  *
+  */
+{
+  "type": "adam_two_seven_sensor_magnetometer",
+  "message0": "магнитометр %1 переменная класса датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * adam_two_seven_sensor_pressure
+  *
+  */
+{
+  "type": "adam_two_seven_sensor_pressure",
+  "message0": "давление %1 переменная класса датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * adam_two_seven_sensor_altitude
+  *
+  */
+{
+  "type": "adam_two_seven_sensor_altitude",
+  "message0": "высота над уровнем моря %1 переменная класса датчика %2",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+/**
+  * adam_two_seven_sensor_declaration_extended
+  *
+  */
+{
+  "type": "adam_two_seven_sensor_declaration_extended",
+  "message0": "инициализация датчика bmp280 %1 переменная шины i2c %2 %3 адрес устройства i2c %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "i2c_variable",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "sensor_address"
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "adam_two_seven_bmp280_addr_const",
+  "message0": "адрес датчика bmp280  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "addr_variable",
+      "options": [
+        [
+          "0x76",
+          "0x76"
+        ],
+        [
+          "0x77",
+          "0x77"
+        ]
+      ]
+    }
+  ],
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "adam_two_seven_sensor_set_pressure",
+  "message0": "поправка для атмосферного давления  %1 переменная класса датчика %2 %3 текущее атмосферное давление %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_variable",
+      "name": "sensor_variable",
+      "variable": "item"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_number",
+      "name": "current_atmospheric_pressure_variable",
+      "value": 1000
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "adam_two_seven_sensor_mpu_9250_declaration",
+  "message0": "инициализация датчика mpu9250",
+  "output": null,
+  "colour": 160,
+  "tooltip": "",
+  "helpUrl": ""
+}
+]);
