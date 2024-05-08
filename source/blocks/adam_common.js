@@ -8,6 +8,41 @@
 
 Blockly.defineBlocksWithJsonArray([
 
+/*new eye pack*/
+{
+  "type": "common_eye_new_eye",
+  "message0": "Новый экземпляр класса RobotEyeDisplay()",
+  "output": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "common_eye_run_anim",
+  "message0": "переменная класса RobotEyeDisplay() %1 анимация правого глаза %2 анимация левого глаза %3",
+  "args0": [
+    {
+      "type": "input_value",
+      "name": "instance_class_variable"
+    },
+    {
+      "type": "input_value",
+      "name": "right_eye_gif_path"
+    },
+    {
+      "type": "input_value",
+      "name": "left_path_gif_path"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+
 /**
   * common_eye_pack
   *

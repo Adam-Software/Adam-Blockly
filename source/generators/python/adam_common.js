@@ -5,7 +5,23 @@
 
 'use strict';
 // If any new block imports any library, add that library name here.
-Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os, sh, RHVoice, pygame');
+Blockly.Python.addReservedWords('smbus, board, adafruit_extended_bus, ExtendedI2C, musicpy, os, sh, RHVoice, pygame, RobotEyeDisplay');
+
+/* common_eye_new_eye */
+Blockly.Python['common_eye_new_eye'] = function(block) {
+  Blockly.Python.definitions_['from_robot_eye_display_import_RobotEyeDisplay'] = 'from robot_eye_display import RobotEyeDisplay';
+  var code = 'RobotEyeDisplay()';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/* common_eye_run_anim */
+Blockly.Python['common_eye_run_anim'] = function(block) {
+  var value_instance_class_variable = Blockly.Python.valueToCode(block, 'instance_class_variable', Blockly.Python.ORDER_ATOMIC);
+  var value_right_eye_gif_path = Blockly.Python.valueToCode(block, 'right_eye_gif_path', Blockly.Python.ORDER_NONE);
+  var value_left_path_gif_path = Blockly.Python.valueToCode(block, 'left_path_gif_path', Blockly.Python.ORDER_NONE);
+  var code = value_instance_class_variable + '.run(' + value_right_eye_gif_path + ', ' + value_left_path_gif_path +  ')\n';
+  return code;
+};
 
 /**
   * common_eye_pack
